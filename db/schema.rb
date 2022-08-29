@@ -35,6 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_143032) do
     t.text "description"
     t.string "location"
     t.float "price"
+<<<<<<< HEAD
     t.bigint "users_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -42,4 +43,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_143032) do
   end
 
   add_foreign_key "vehicles", "users", column: "users_id"
+=======
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_vehicles_on_user_id"
+  end
+
+  add_foreign_key "vehicles", "users"
+>>>>>>> 50d00f5b8c0c4ca261b5f7a3bc2ea54661aaa6e0
 end

@@ -9,7 +9,7 @@ class CreateVehicles < ActiveRecord::Migration[7.0]
       t.text :description
       t.string :location
       t.float :price
-      t.references :users, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
