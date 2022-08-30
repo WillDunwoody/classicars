@@ -1,7 +1,7 @@
 .nav-bar {
   position: absolute;
   top: 0;
-  width: 100vw;
+  width: 100%;
   padding-left: 50px;
   padding-right: 50px;
   background-color: rgba(101, 92,	83, 0.5);
@@ -16,5 +16,9 @@
     font-weight: bold;
     display: inline;
     color:white
+  }
+
+  li a {
+    text-decoration: none;
   }
 }

@@ -14,8 +14,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="body-container">
+      <%= yield %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
+    </div>
   </body>
 </html>
