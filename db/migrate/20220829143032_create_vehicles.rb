@@ -4,7 +4,7 @@ class CreateVehicles < ActiveRecord::Migration[7.0]
       t.string :model
       t.string :make
       t.integer :year
-      t.string :type
+      t.string :vehicle_type
       t.integer :passengers
       t.text :description
       t.string :location

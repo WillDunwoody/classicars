@@ -15,10 +15,12 @@
     font-size: 40px;
     font-weight: bold;
     display: inline;
-    color:white
+    color:white;
+    z-index: 1;
   }
 
   li a {
     text-decoration: none;
+    color: white;
   }
 }

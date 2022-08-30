@@ -42,7 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_152334) do
     t.string "model"
     t.string "make"
     t.integer "year"
-    t.string "type"
+    t.string "vehicle_type"
     t.integer "passengers"
     t.text "description"
     t.string "location"
