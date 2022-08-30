@@ -1,9 +1,9 @@
 .logo-container {
   position: absolute;
   top: 0;
-  right: 45%;
-  width: 150px;
-  width: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .classic-logo {

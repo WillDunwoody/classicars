@@ -1,4 +1,7 @@
 class VehiclesController < ApplicationController
+  def index
+  end
+
   def new
   end
 
@@ -9,9 +12,6 @@ class VehiclesController < ApplicationController
   end
 
   def update
-  end
-
-  def index
   end
 
   def show
