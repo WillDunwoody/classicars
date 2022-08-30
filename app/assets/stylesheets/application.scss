@@ -11,6 +11,12 @@
 @import "components/index";
 @import "pages/index";
 
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .body-container {
   margin: 0;
   height: 100vh;

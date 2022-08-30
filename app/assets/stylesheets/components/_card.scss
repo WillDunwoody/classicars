@@ -1,11 +1,40 @@
-// .rounded-card {
-//   border-radius: 30px;
-// }
+
 
 .card {
+  width: 278px;
   border-style: none;
+  img {
+    width: 278px;
+    height: 278px;
+    object-fit: cover;
+  }
+
 }
 .card-img-top {
   border-radius: 10px;
 
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  padding-top: 16px;
+  // font-family:  ;
+}
+
+.card-footer {
+  background-color: white;
+  border: none;
+  padding: 5px 0;
+}
+
+.per-day {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.card-body h3 {
+  font-size: 16px;
+  font-weight: bold;
 }
