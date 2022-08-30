@@ -30,6 +30,7 @@ class VehiclesController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     authorize @vehicle
   end
 
