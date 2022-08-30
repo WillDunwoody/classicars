@@ -1,5 +1,14 @@
+.logo-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .classic-logo {
-  background-image: url("/app/assets/images/ClassiCars.png");
-  width: 500px;
-  height: 500px;
+  background-image: url('https://res.cloudinary.com/diqoidhqa/image/upload/v1661840858/ClassiCars_1_afvnlg.png');
+  background-size: cover;
+  width: 150px;
+  height: 150px;
 }
