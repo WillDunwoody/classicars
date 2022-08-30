@@ -2,6 +2,7 @@
   width: 900px;
 }
 .card-container {
+  border-radius: 10px;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -30,7 +31,7 @@
 .card-body {
   display: flex;
   justify-content: space-between;
-  padding: 0;
+  padding-left: 8px;
   padding-top: 16px;
   // font-family:  ;
 }
