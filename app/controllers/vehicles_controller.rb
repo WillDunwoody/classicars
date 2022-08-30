@@ -3,10 +3,13 @@ class VehiclesController < ApplicationController
 
   def index
     @vehicles = Vehicle.all
+
+    @vehicles = policy_scope(Vehicle)
   end
 
   def new
     @vehicle = Vehicle.new
+    authorize @vehicle
   end
 
   def create
@@ -14,16 +17,20 @@ class VehiclesController < ApplicationController
 
     @vehicle.user = current_user
     @vehicle.save
+    authorize @vehicle
   end
 
   def edit
+    authorize @vehicle
   end
 
   def update
     @vehicle.update(vehicle_params)
+    authorize @vehicle
   end
 
   def show
+    authorize @vehicle
   end
 
   private

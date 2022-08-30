@@ -1,36 +1,38 @@
 class BookingsController < ApplicationController
-  def new
-    @booking = Booking.new
-    @vehicle = Vehicle.find(params[:vehicle_id])
+  # def new
+  #   @vehicle = Vehicle.find(params[:vehicle_id])
+  #   @booking = Booking.new
 
-    authorize @booking
-  end
+  #   authorize @booking
+  # end
 
   def create
-    @vehicle = Vehicle.find(params[:vehicle_id])
     @booking = Booking.new(booking_params)
+    @vehicle = Vehicle.find(params[:vehicle_id])
 
     @booking.vehicle = @vehicle
     @booking.user = current_user
     authorize @booking
     @booking.save
+
+    redirect_to vehicle_path(@vehicle)
   end
 
   def edit
-    authroize @booking
+    authorize @booking
   end
 
   def update
-    authroize @booking
+    authorize @booking
   end
 
   def destroy
-    authroize @booking
+    authorize @booking
   end
 
   private
 
   def booking_params
-    params.requre(:booking).permit(:start_date, :end_date, :booking_status)
+    params.require(:booking).permit(:start_date, :end_date, :booking_status, :vehicle_id)
   end
 end
