@@ -1,12 +1,24 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
+.nav-bar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: rgba(101, 92,	83, 0.5);
+  font-family: 'Qwitcher Grypen', cursive;
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+  ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  li {
+    font-size: 40px;
+    font-weight: bold;
+    display: inline;
+    color:white
+  }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  li a {
+    text-decoration: none;
+  }
 }
