@@ -4,13 +4,18 @@
   z-index: 1;
   width: 100%;
   padding: 32px;
- 
+
 
   ul {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
 
     li:hover {
       cursor: pointer;

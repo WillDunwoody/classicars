@@ -1,6 +1,8 @@
 <%= render '/components/navbar' %>
 
+
 <div class="container">
+<h1><%= @vehicle.make %> <%= @vehicle.model %></h1>
   <div class="show-container ">
 
     <div class="pictures ">
@@ -13,7 +15,7 @@
           <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
         </div>
         <div class="secondary-pic">
-          <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round"> 
+          <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
         </div>
       </div>
     </div>
@@ -32,6 +34,8 @@
           <%= @vehicle.description %>
         </div>
       </div>
+
+    </div>
       <div class="simple-form-container ">
         <%= simple_form_for [@vehicle, @booking] do |f| %>
           <div class="dates">
@@ -43,6 +47,5 @@
           <%= f.submit "Book Now" %>
         <% end %>
       </div>
-    </div>
   </div>
 </div>
