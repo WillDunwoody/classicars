@@ -7,15 +7,28 @@
 
     <div class="pictures ">
       <div class="main-picture ">
-        <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
+        <% if @vehicle.photos.first.key.nil? %>
+          <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
+        <% else %>
+          <img src="<%= cl_image_path @vehicle.photos.first.key, crop: :fill %>">
+        <% end %>
       </div>
 
       <div class="secondary-pictures ">
         <div class="secondary-pic mb-3">
-          <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
+           <% if @vehicle.photos.first.key.nil? %>
+              <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
+           <% else %>
+             <img src="<%= cl_image_path @vehicle.photos.second.key, crop: :fill %>">
+        <% end %>
+
         </div>
         <div class="secondary-pic">
-          <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
+         <% if @vehicle.photos.first.key.nil? %>
+            <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
+          <% else %>
+            <img src="<%= cl_image_path @vehicle.photos.third.key, crop: :fill %>">
+          <% end %>
         </div>
       </div>
     </div>
