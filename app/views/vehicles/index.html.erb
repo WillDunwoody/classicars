@@ -11,4 +11,6 @@
   </div>
 </div>
 
-<%= link_to "home", user_path(@current_user) %>
+<% if current_user %>
+  <%= link_to "home", user_path(@current_user) %>
+<% end %>
