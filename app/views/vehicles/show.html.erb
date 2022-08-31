@@ -1,2 +1,8 @@
 <h1>Vehicles#show</h1>
 <p>Find me in app/views/vehicles/show.html.erb</p>
+
+<%= simple_form_for [@vehicle, @booking] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit "Book Now" %>
+<% end %>

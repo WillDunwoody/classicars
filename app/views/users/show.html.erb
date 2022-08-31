@@ -1,0 +1,14 @@
+<%# Logic for priting out dates and price for personal user %>
+
+<% @user.bookings.each do |booking| %>
+  <%# finding vehicle and calculating price %>
+  <% vehicle =  @vehicles.find(booking.id) %>
+  <% date = booking.end_date - booking.start_date %>
+  <% price = date * vehicle.price %>
+
+  <%# Pringting everything on screen %>
+  <%= booking.start_date %>
+  <%= booking.end_date %>
+  <%= price %>
+  <%= vehicle.make %> <%= vehicle.model %>
+<% end %>

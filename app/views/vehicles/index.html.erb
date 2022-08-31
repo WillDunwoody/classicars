@@ -5,8 +5,10 @@
 </div>
 <div class="container">
   <div class="card-container mt-3">
-    <%= render '/components/card' %>
-    <%= render '/components/card' %>
-    <%= render '/components/card' %>
+    <% @vehicles.each do |vehicle| %>
+      <%= render '/components/card', vehicle: vehicle %>
+    <% end %>
   </div>
 </div>
+
+<%= link_to "home", user_path(@current_user) %>

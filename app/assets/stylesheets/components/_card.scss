@@ -6,6 +6,8 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  flex-wrap: wrap;
+
 }
 
 .card {
@@ -33,13 +35,15 @@
   justify-content: space-between;
   padding-left: 8px;
   padding-top: 16px;
-  // font-family:  ;
 }
 
 .card-footer {
   background-color: white;
   border: none;
   padding: 5px 0;
+  a {
+    text-decoration: none;
+  }
 }
 
 .per-day {

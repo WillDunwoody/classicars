@@ -15,6 +15,8 @@ gem "pg", "~> 1.1"
 # --------My Gems---------
 gem "devise"
 
+gem "pundit"
+
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
