@@ -1,7 +1,21 @@
 <div class="nav-bar">
-  <ul>
-    <li><%= link_to "Home"%></li>
-    <li><%= link_to "Sign-In", user_session_path %></li>
-  </ul>
+  <div class="nav-left">
+    <ul>
+      <li>ClassiCars</li>
+    </ul>
+  </div>
+  <div class="nav-right">
+    <% if current_user %>
+      <ul>
+        <li><%= link_to "Home", user_path(current_user), class:"btn black-button"%></li>
+        <li>Rent a Classic</li>
+      </ul>
+    <% else %>
+      <ul>
+        <li><%= link_to "Sign-In", user_session_path %></li>
+        <li>Rent a Classic</li>
+      </ul>
+    <% end %>
+  </div>
 
 </div>

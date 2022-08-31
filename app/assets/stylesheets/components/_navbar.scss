@@ -4,23 +4,21 @@
   width: 100%;
   padding-left: 50px;
   padding-right: 50px;
-  background-color: rgba(101, 92,	83, 0.5);
-  font-family: 'Qwitcher Grypen', cursive;
+  background-color: white;
+  font-family: 'Arial';
+  font-weight: lighter;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   ul {
     display: flex;
     justify-content: space-between;
   }
   li {
-    font-size: 40px;
-    font-weight: bold;
     display: inline;
-    color:white;
+    color: black;
     z-index: 1;
-  }
-
-  li a {
-    text-decoration: none;
-    color: white;
   }
 }
