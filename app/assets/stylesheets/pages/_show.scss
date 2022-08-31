@@ -1,35 +1,89 @@
 .show-container {
-  width: 900px;
+  width: 1010px;
+  margin: 0 auto;
 }
 
 .pictures {
-  width: 850px;
   display: flex;
   justify-content: space-between;
-}
+  width: 100%;
+  margin-bottom: 32px;
 
-.main-picture {
-  img {
-    width: 450px;
-    height: 400px;
+  .main-picture img {
+    width: 652px;
+    height: 512px;
+    border-radius: 10px;
+  }
+
+  .secondary-pictures {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    img {
+      width: 326px;
+      height: 240px;
+      border-radius: 10px;
+    }
   }
 }
 
-.secondary-pictures {
-  img {
-    width: 250px;
-    height: 200px;
-  }
-}
-
-.pictures {
-  display: flex;
+p {
+  margin: 0;
 }
 
 .info-container {
+  width: 1010px;
+  margin: 0 auto;
   display: flex;
-}
+  justify-content: space-between;
 
-.border-round {
-  border-radius: 30px;
+  .description {
+    display: flex;
+    flex-direction: column;
+    padding-right: 32px;
+    width: calc(1010px - 358px);
+
+    .profile {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+
+      .pp {
+        width: 100px;
+        height: 100px;
+        margin-right: 32px;
+        background-color: #aaa;
+        border-radius: 100%;
+      }
+
+      h1 {
+        margin: 0;
+        flex-grow: 1;
+      }
+    }
+
+    .test {
+      display: flex;
+
+      .location {
+        box-sizing: border-box;
+        width: 100px;
+        margin-right: 32px;
+        text-align: center;
+      }
+
+      .vehicle-description {
+        width: calc(100% - 132px);
+      }
+    }
+  }
+
+  .book-form {
+    display: block;
+    width: 326px;
+    padding: 32px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+  }
 }
