@@ -10,18 +10,22 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/home";
 
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+body {
+  font-family: $font;
+  font-weight: 100;
+}
+
 .body-container {
   margin: 0;
   height: 100vh;
-}
-
-body {
-  background-color: white;
 }
