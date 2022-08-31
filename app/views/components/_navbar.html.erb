@@ -1,6 +1,6 @@
 <div class="nav-bar remove-link-decoration">
   <ul>
-    <li class="logo"><%= link_to "ClassiCars", "pages/home"%></li>
+    <li class="logo"><%= link_to "ClassiCars", "/"%></li>
     <li><% if @user.nil? %>
        <%= link_to "Sign in", user_session_path %>
       <% else %>
