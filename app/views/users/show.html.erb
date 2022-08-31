@@ -8,7 +8,8 @@
   <div class="card-container">
 
     <% @user.bookings.each do |booking| %>
-      <% vehicle =  @vehicles.find(booking.vehicle_id) %>
+      <% vehicle = @vehicles.find(booking.vehicle_id) %>
+
       <% date = booking.end_date - booking.start_date %>
       <% price = date * vehicle.price %>
 
