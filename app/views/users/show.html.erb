@@ -19,8 +19,10 @@
                 <h3 ><%= vehicle.make %> <%= vehicle.model %></h3>
                 <p><%= vehicle.city %>, <%= vehicle.country %></p>
               </div>
-              <p>From <%= booking.start_date %> to <%= booking.end_date %></p>
+              <div class="card-price">
+              <p><strong>From</strong> <%= booking.start_date %> <strong>to</strong> <%= booking.end_date %></p>
               <p>€<%= price %> </p>
+              </div>
             </div>
           </div>
         <% end %>
@@ -31,4 +33,4 @@
 
   </div>
 
-</div>
+</div> <strong>From</strong>
