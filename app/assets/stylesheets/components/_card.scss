@@ -36,7 +36,16 @@
   padding-left: 8px;
   padding-top: 16px;
 }
+.card-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
 
+  p {
+    text-align: right;
+  }
+}
 .card-footer {
   background-color: white;
   border: none;
@@ -62,5 +71,3 @@
     color: black;
   }
 }
-
-
