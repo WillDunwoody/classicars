@@ -6,7 +6,6 @@
 
     <div class="pictures ">
       <div class="main-picture ">
-<<<<<<< HEAD
         <% if @vehicle.photos.first.key.nil? %>
           <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
         <% else %>
@@ -29,19 +28,6 @@
           <% else %>
             <img src="<%= cl_image_path @vehicle.photos.third.key, crop: :fill %>">
           <% end %>
-=======
-        <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="">
-      </div>
-
-      <div class="secondary-pictures ">
-        <div class="secondary-pic">
-          <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="">
-        </div>
-        <div class="secondary-pic">
-
-          <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt=""> 
-
->>>>>>> master
         </div>
       </div>
     </div>
@@ -67,10 +53,10 @@
         <div class="simple-form-container ">
           <%= simple_form_for [@vehicle, @booking] do |f| %>
             <div class="dates">
-              <%= f.input :start_date, order: [:day, :month, :year] %>
+              <%= f.input :start_date, html5: true %>
             </div>
             <div class="dates">
-              <%= f.input :end_date, order: [:day, :month, :year] %>
+              <%= f.input :end_date, html5: true %>
             </div>
             <%= f.submit "Book", class: 'book-btn' %>
           <% end %>
