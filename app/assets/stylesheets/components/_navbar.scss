@@ -3,7 +3,12 @@
   top: 0;
   z-index: 1;
   width: 100%;
-  padding: 32px;
+  text-decoration: none;
+  padding: 10px 20px;
+  padding-right: 30px;
+  margin-bottom: 20px;
+  background-color: white;
+  opacity: .50;
 
 
   ul {
@@ -14,7 +19,8 @@
 
     a {
       text-decoration: none;
-      color: white;
+      color: rgb(7, 6, 6);
+      font-weight: bold;
     }
 
     li:hover {
@@ -31,4 +37,5 @@
       font-weight: 400;
     }
   }
+
 }
