@@ -11,6 +11,7 @@ class VehiclesController < ApplicationController
 
   def new
     @vehicle = Vehicle.new
+    @user = current_user
     authorize @vehicle
   end
 
