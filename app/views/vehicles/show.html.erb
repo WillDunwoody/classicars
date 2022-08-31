@@ -1,5 +1,33 @@
-<h1>Vehicles#show</h1>
-<p>Find me in app/views/vehicles/show.html.erb</p>
+<%= render '/components/navbar' %>
+
+<div class="show-container border">
+  <div class="pictures border">
+    <div class="main-picture border">
+      <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="">
+    <div class="secondary-pictures border">
+      <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="">
+      <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="">
+    </div>
+  </div>
+  <div class="info-container border">
+    <div class="profile border">
+    </div>
+    <div class="location border">
+      <p><%= @vehicle.city %>, <%= @vehicle.country %></p>
+    </div>
+  </div>
+  <div class="description-container border">
+    <div class="vehicle-make border">
+      <%= @vehicle.make %>
+      <%= @vehicle.model %>
+    </div>
+    <div class="vehicle-description border">
+      <%= @vehicle.description %>
+    </div>
+  </div>
+  <div class="simple-form-container border">
+  </div>
+</div>
 
 <div class="simple-form-container">
   <%= simple_form_for [@vehicle, @booking] do |f| %>
