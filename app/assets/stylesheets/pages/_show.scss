@@ -1,0 +1,35 @@
+.show-container {
+  width: 900px;
+}
+
+.pictures {
+  width: 850px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-picture {
+  img {
+    width: 450px;
+    height: 400px;
+  }
+}
+
+.secondary-pictures {
+  img {
+    width: 250px;
+    height: 200px;
+  }
+}
+
+.pictures {
+  display: flex;
+}
+
+.info-container {
+  display: flex;
+}
+
+.border-round {
+  border-radius: 30px;
+}
