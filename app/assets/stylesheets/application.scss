@@ -10,6 +10,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/home";
 
 *,
 ::before,
@@ -19,12 +20,12 @@
   padding: 0;
 }
 
+body {
+  font-family: $font;
+  font-weight: 100;
+}
+
 .body-container {
   margin: 0;
   height: 100vh;
-}
-
-body {
-  font-family: $font;
-  background-color: white;
 }

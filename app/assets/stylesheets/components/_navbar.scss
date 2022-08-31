@@ -1,24 +1,28 @@
 .nav-bar {
-  position: absolute;
+  position: sticky;
   top: 0;
+  z-index: 1;
   width: 100%;
-  padding-left: 50px;
-  padding-right: 50px;
-  background-color: white;
-  font-family: 'Arial';
-  font-weight: lighter;
-  font-size: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 32px;
 
   ul {
     display: flex;
-    justify-content: space-between;
-  }
-  li {
-    display: inline;
-    color: black;
-    z-index: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li:hover {
+      cursor: pointer;
+    }
+
+    .logo {
+      flex-grow: 1;
+      font-weight: 400;
+    }
+
+    .cta-rent {
+      margin-left: 32px;
+      font-weight: 400;
+    }
   }
 }

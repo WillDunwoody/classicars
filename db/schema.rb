@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_29_152334) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_31_072908) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,6 +24,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_152334) do
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_bookings_on_user_id"
     t.index ["vehicle_id"], name: "index_bookings_on_vehicle_id"
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,7 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_152334) do
     t.string "model"
     t.string "make"
     t.integer "year"
-    t.string "vehicle_type"
+    t.string "type"
     t.integer "passengers"
     t.text "description"
     t.string "location"
