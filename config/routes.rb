@@ -7,7 +7,4 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show]
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 end

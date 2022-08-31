@@ -1,26 +1,19 @@
 .nav-bar {
-  position: absolute;
-  top: 0;
   width: 100%;
-  padding-left: 50px;
-  padding-right: 50px;
-  background-color: rgba(101, 92,	83, 0.5);
-  font-family: 'Qwitcher Grypen', cursive;
+  padding: 32px;
 
   ul {
     display: flex;
-    justify-content: space-between;
-  }
-  li {
-    font-size: 40px;
-    font-weight: bold;
-    display: inline;
-    color:white;
-    z-index: 1;
+    list-style: none;
+    padding: 0;
   }
 
-  li a {
-    text-decoration: none;
-    color: white;
+  .logo {
+    flex-grow: 1;
+  }
+
+  .cta-rent {
+    margin-left: 32px;
+    font-weight: 400;
   }
 }
