@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.save
 
-    redirect_to vehicle_path(@vehicle)
+    redirect_to user_path(current_user)
   end
 
   def edit

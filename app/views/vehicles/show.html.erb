@@ -1,14 +1,48 @@
-<h1>Vehicles#show</h1>
-<p>Find me in app/views/vehicles/show.html.erb</p>
+<%= render '/components/navbar' %>
 
-<div class="simple-form-container">
-  <%= simple_form_for [@vehicle, @booking] do |f| %>
-    <div class="dates">
-      <%= f.input :start_date, order: [:day, :month, :year] %>
+<div class="container">
+  <div class="show-container ">
+
+    <div class="pictures ">
+      <div class="main-picture ">
+        <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
+      </div>
+
+      <div class="secondary-pictures ">
+        <div class="secondary-pic mb-3">
+          <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
+        </div>
+        <div class="secondary-pic">
+          <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round"> 
+        </div>
+      </div>
     </div>
-    <div class="dates">
-      <%= f.input :end_date, order: [:day, :month, :year] %>
+
+    <div class="info-container ">
+      <div class="location ">
+        <p><%= @vehicle.city %>, <%= @vehicle.country %></p>
+      </div>
+
+      <div class="description-container ">
+        <div class="vehicle-make ">
+          <%= @vehicle.make %>
+          <%= @vehicle.model %>
+        </div>
+        <div class="vehicle-description ">
+          <%= @vehicle.description %>
+        </div>
+      </div>
+      <div class="simple-form-container ">
+        <%= simple_form_for [@vehicle, @booking] do |f| %>
+          <div class="dates">
+            <%= f.input :start_date, order: [:day, :month, :year] %>
+           </div>
+          <div class="dates">
+            <%= f.input :end_date, order: [:day, :month, :year] %>
+          </div>
+          <%= f.submit "Book Now" %>
+        <% end %>
+      </div>
     </div>
-    <%= f.submit "Book Now" %>
-  <% end %>
+  </div>
 </div>
