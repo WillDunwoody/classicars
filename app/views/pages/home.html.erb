@@ -1,16 +1,4 @@
 <div class="home-bg">
-  <div class="nav-bar remove-link-decoration">
-  <ul>
-    <li class="logo"><%= link_to "ClassiCars", "/"%></li>
-    <li class="tag-white" ><% if @user.nil? %>
-       <%= link_to "Sign in", user_session_path %>
-      <% else %>
-        <%= link_to current_user.email, user_path(@user) %>
-      <% end %>
-      </li>
-    <li class="tag-white"><%= link_to "Rent a classic" %></li>
-  </ul>
-</div>
-
+  <%= render '/components/navbar_white' %>
   <%= render '/components/main_form' %>
 </div>
