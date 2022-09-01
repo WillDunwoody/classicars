@@ -6,7 +6,7 @@
 
     <div class="pictures ">
       <div class="main-picture ">
-        <% if @vehicle.photos.first.key.nil? %>
+        <% if @vehicle.photos.first.nil? %>
           <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
         <% else %>
           <img src="<%= cl_image_path @vehicle.photos.first.key, crop: :fill %>">
@@ -15,7 +15,7 @@
 
       <div class="secondary-pictures ">
         <div class="secondary-pic mb-3">
-           <% if @vehicle.photos.first.key.nil? %>
+           <% if @vehicle.photos.first.nil? %>
               <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
            <% else %>
              <img src="<%= cl_image_path @vehicle.photos.second.key, crop: :fill %>">
@@ -23,7 +23,7 @@
 
         </div>
         <div class="secondary-pic">
-         <% if @vehicle.photos.first.key.nil? %>
+         <% if @vehicle.photos.first.nil? %>
             <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
           <% else %>
             <img src="<%= cl_image_path @vehicle.photos.third.key, crop: :fill %>">
@@ -63,4 +63,6 @@
         </div>
 
       </div>
+
+      <%= link_to "edit", edit_vehicle_path %>
   </div>
