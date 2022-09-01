@@ -1,28 +1,29 @@
-<h2>Sign up</h2>
+<%= render '/components/navbar' %>
+
 <div class="main-signup-container">
+  <h2 class="mb-5">Sign up</h2>
   <div class="signup-container">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
+        <div class="signup-input">
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" }%>
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :photo, as: :file %>
 
-      <div class="form-inputs">
-        <%= f.input :email,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" }%>
-        <%= f.input :password,
-                    required: true,
-                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                    required: true,
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :photo, as: :file %>
+        </div>
+        </div>
 
-      </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
-      </div>
+          <%= f.button :submit, "Sign up", class:"submit.btn" %>
     <% end %>
   </div>
 </div>

@@ -59,16 +59,16 @@
           <div class="total">
             <span>TOTAL</span>
             <span class="total-price">
-            <% if params[:from].type?  || Date.parse(params[:to]).nil?%>
-              <<%= 0 %> €</span>
+            <% if (params[:from].nil? || params[:from].empty?  || params[:to].nil? || params[:to].empty?) %>
+              <%= 0 %> €</span>
             <% else %>
-            <%
-              from = Date.parse(params[:from])
-              to = Date.parse(params[:to])
-              days = (to - from).to_i
-              price = days * @vehicle.price
-            %>
-            <%= price %> €</span>
+              <%
+                from = Date.parse(params[:from])
+                to = Date.parse(params[:to])
+                days = (to - from).to_i
+                price = days * @vehicle.price
+              %>
+              <%= price %> €</span>
             <% end %>
           </div>
         <% end %>
