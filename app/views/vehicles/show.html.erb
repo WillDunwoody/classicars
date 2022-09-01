@@ -30,17 +30,19 @@
 
   <div class="info-container ">
     <div class="description">
-      <div class="profile">
-        <div class="pp"></div>
-        <div>
-          <h1><%= @vehicle.make %> <%= @vehicle.model %></h1>
-          <p><%= @vehicle.year %>, <%= @vehicle.passengers %> seats</p>
+      <div>
+        <div class="profile">
+          <div class="pp"></div>
+          <div>
+            <h1><%= @vehicle.make %> <%= @vehicle.model %></h1>
+            <p><%= @vehicle.year %>, <%= @vehicle.passengers %> seats</p>
+          </div>
         </div>
-      </div>
-      <div class="test">
-        <div class="location">Rome, Italy</div>
-        <div class="vehicle-description">
-          <%= @vehicle.description %>
+        <div class="test">
+          <div class="location"><%= @vehicle.city %>, <%= @vehicle.country %></div>
+          <div class="vehicle-description">
+            <%= @vehicle.description %>
+          </div>
         </div>
       </div>
       <div class="book-form">
