@@ -1,11 +1,11 @@
 <div class="nav-bar-white remove-link-decoration">
   <ul>
     <li class="logo"><%= link_to "ClassiCars", "/"%></li>
-    <% if @user.nil? %>
-      <li> <%= link_to "Sign in/Sign up", user_session_path %></li>
-      <li><%=link_to "Rent a classic", vehicles_path%></li>
+    <% if current_user.nil? %>
+      <li><%= link_to "Sign in/Sign up", user_session_path %></li>
+      <li><%= link_to "Rent a classic", vehicles_path %></li>
     <% else %>
-      <li><%=link_to "Rent a classic", vehicles_path%></li>
+      <li><%=link_to "Rent a classic", vehicles_path %></li>
       <li class="nav-item dropdown">
         <%= cl_image_tag current_user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar-large dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

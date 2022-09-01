@@ -1,27 +1,23 @@
 .nav-bar {
   z-index: 1;
   width: 100%;
-  text-decoration: none;
-  padding: 10px 20px;
-  padding-right: 30px;
-  margin-bottom: 20px;
-  background-color: white;
-  opacity: .50;
+  padding: 32px;
+
+  a.dropdown-item {
+    text-decoration: none;
+    color: rgb(8, 8, 8);
+  }
 
   ul {
     display: flex;
+    align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
 
     a {
       text-decoration: none;
-<<<<<<< HEAD
-      color: black;
-=======
-      color: rgb(7, 6, 6);
-      font-weight: bold;
->>>>>>> 322a5850586f6a78724e878b848596842070cf0d
+      color: rgb(0, 0, 0);
     }
 
     li:hover {
@@ -30,13 +26,12 @@
 
     .logo {
       flex-grow: 1;
-      font-weight: bold;
+      font-weight: 700;
     }
 
     .cta-rent {
       margin-left: 32px;
-      font-weight: bold;
+      font-weight: 700;
     }
   }
-
 }

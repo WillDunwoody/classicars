@@ -15,7 +15,10 @@
   </head>
   <body>
     <div class="body-container">
+    <div class="wrapper">
       <%= yield %>
+      <%=render '/components/footer'%>
+    </div>
     </div>
   </body>
 </html>
