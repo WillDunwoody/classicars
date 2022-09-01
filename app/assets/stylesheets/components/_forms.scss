@@ -1,12 +1,39 @@
+
 .main-signup-container {
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
 .signup-container {
-  height: 600px;
-  width: 400px;
+    height: 400px;
+    width: 400px;
+
+  .signup-input {
+    width: 355px;
+    height: 42px;
+    margin-left: 32px;
+    padding-left: 32px;
+    color: #333;
+    border-radius: 5px;
+  }
+
+  .submit-btn {
+    width: 110px;
+    height: 42px;
+    font-weight: 700;
+    color: #333;
+    background-color: #fff;
+    border: 2px solid #333;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: #333;
+      color: #fff;
+    }
+  }
+
 }
