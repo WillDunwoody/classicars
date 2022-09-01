@@ -45,9 +45,9 @@
         <% price = date * vehicle.price %>
 
         <% if booking.start_date < DateTime.now %>
-          <div class="remove-link-decoration">
 
-            <%= link_to vehicle_path(vehicle.id) do %>
+          <div class="remove-link-decoration">
+             <%= link_to vehicle_path(vehicle.id) do %>
 
               <div class="card-product my-5">
                 <img src="https://source.unsplash.com/1600x900/?<%= vehicle.make %>%20<%= vehicle.model %>car" class="card-img-top" alt="..." />
@@ -57,8 +57,8 @@
                   <p>€<%= price %> </p>
                   <%= link_to "Review", new_vehicle_review_path(vehicle.id) %>
                 </div>
-
               </div>
+
             <% end %>
           </div>
         <% end %>
