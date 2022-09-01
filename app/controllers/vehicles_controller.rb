@@ -3,15 +3,16 @@ class VehiclesController < ApplicationController
   before_action :find_vehicle, only: [:edit, :update, :show]
 
   def index
-    @vehicles = Vehicle.all
+    if params[:location].present?
+      @vehicles = policy_scope(Vehicle).where(city: params[:location])
+    else
+      @vehicles = policy_scope(Vehicle)
+    end
     @user = current_user
-
-    @vehicles = policy_scope(Vehicle)
   end
 
   def new
     @vehicle = Vehicle.new
-    @user = current_user
     authorize @vehicle
   end
 
@@ -36,7 +37,6 @@ class VehiclesController < ApplicationController
 
   def show
     @booking = Booking.new
-    @user = current_user
     authorize @vehicle
   end
 

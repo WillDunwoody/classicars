@@ -1,0 +1,5 @@
+<%= simple_form_for [@vehicle, @review] do |f| %>
+  <%= f.input :comment, as: :text %>
+  <%= f.input :rating, as: :integer %>
+  <%= f.submit "Submit Review" %>
+<% end %>

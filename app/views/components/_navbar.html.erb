@@ -1,6 +1,7 @@
 <div class="nav-bar remove-link-decoration">
   <ul>
     <li class="logo"><%= link_to "ClassiCars", "/"%></li>
+<<<<<<< HEAD
     <% if current_user.nil? %>
       <li> <%= link_to "Sign in/Sign up", user_session_path %></li>
       <li><%=link_to "Rent a classic", vehicles_path %></li>
@@ -12,6 +13,13 @@
           <%= link_to "My bookings", user_path(current_user), class: "dropdown-item" %>
           <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
         </div>
+=======
+    <li><% if current_user.nil? %>
+       <%= link_to "Sign in", user_session_path %>
+      <% else %>
+        <%= link_to current_user.email, user_path(current_user) %>
+      <% end %>
+>>>>>>> 9b61c578b9af0148580c216154787ce9f94c13af
       </li>
       <% end %>
   </ul>
