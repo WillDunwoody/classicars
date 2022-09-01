@@ -1,6 +1,4 @@
 .nav-bar {
-  position: sticky;
-  top: 0;
   z-index: 1;
   width: 100%;
   padding: 32px;
@@ -13,7 +11,7 @@
 
     a {
       text-decoration: none;
-      color: black
+      color: black;
     }
 
     li:hover {
@@ -22,18 +20,12 @@
 
     .logo {
       flex-grow: 1;
-      font-weight: 400;
+      font-weight: bold;
     }
 
     .cta-rent {
       margin-left: 32px;
-      font-weight: 400;
+      font-weight: bold;
     }
-  }
-
-  .tag-white {
-      a {
-        color: white;
-      }
   }
 }
