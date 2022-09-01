@@ -24,6 +24,7 @@ class VehiclesController < ApplicationController
     authorize @vehicle
 
     redirect_to user_path(current_user)
+    
   end
 
   def edit

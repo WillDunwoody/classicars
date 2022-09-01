@@ -1,8 +1,6 @@
-<h1>Vehicles#new</h1>
-<p>Find me in app/views/vehicles/new.html.erb</p>
 
 <div class="container">
-  <%= simple_form_for @vehicle do |f| %>
+  <%= simple_form_for [current_user, @vehicle] do |f| %>
     <%= f.input :make %>
     <%= f.input :model %>
     <%= f.input :year, as: :date, html5: true %>
