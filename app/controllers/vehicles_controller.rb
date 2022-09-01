@@ -4,12 +4,14 @@ class VehiclesController < ApplicationController
 
   def index
     @vehicles = Vehicle.all
+    @user = current_user
 
     @vehicles = policy_scope(Vehicle)
   end
 
   def new
     @vehicle = Vehicle.new
+    @user = current_user
     authorize @vehicle
   end
 
@@ -19,6 +21,8 @@ class VehiclesController < ApplicationController
     @vehicle.user = current_user
     @vehicle.save
     authorize @vehicle
+
+    redirect_to user_path(current_user)
   end
 
   def edit
@@ -32,6 +36,7 @@ class VehiclesController < ApplicationController
 
   def show
     @booking = Booking.new
+    @user = current_user
     authorize @vehicle
   end
 
@@ -42,6 +47,6 @@ class VehiclesController < ApplicationController
   end
 
   def vehicle_params
-    params.require(:vehicle).permit(:model, :make, :year, :vehicle_type, :passengers, :description, :location, :price)
+    params.require(:vehicle).permit(:model, :make, :year, :passengers, :description, :location, :price, photos: [])
   end
 end
