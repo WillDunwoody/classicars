@@ -1,10 +1,13 @@
-<%= render '/components/navbar' %>
+<div class="nav-conatiner mb-5">
+  <%= render '/components/navbar' %>
+  <%= render '/components/logo' %>
+</div>
 
-<div class="container">
-<h1><%= @vehicle.make %> <%= @vehicle.model %></h1>
+<div class="container mt-5">
+<h1 class="mb-5"><%= @vehicle.make %> <%= @vehicle.model %></h1>
   <div class="show-container ">
 
-    <div class="pictures ">
+    <div class="pictures mt-5">
       <div class="main-picture ">
         <% if @vehicle.photos.first.nil? %>
           <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
@@ -66,3 +69,7 @@
 
       <%= link_to "edit", edit_vehicle_path %>
   </div>
+</div>
+</div>
+
+<%=render '/components/footer'%>

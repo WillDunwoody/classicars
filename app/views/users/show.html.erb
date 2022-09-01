@@ -1,6 +1,8 @@
-<%= render 'components/navbar' %>
+<div class="nav-conatiner mb-5">
+  <%= render '/components/navbar' %>
+  <%= render '/components/logo' %>
+</div>
 
-<%# Logic for priting out dates and price for personal user %>
 <div class="container">
 
   <h1>My Bookings:</h1>
@@ -34,12 +36,9 @@
         </div>
       <% end %>
     <% end %>
-
   </div>
-
   <h1>My Cars:</h1>
   <%= link_to "Add Car", new_vehicle_path %>
-
-
-
 </div>
+
+<%=render '/components/footer'%>
