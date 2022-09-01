@@ -5,12 +5,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .signup-container {
     height: 400px;
     width: 400px;
+    margin-bottom: 100px;
 
   .signup-input {
     width: 355px;
@@ -18,7 +18,12 @@
     margin-left: 32px;
     padding-left: 32px;
     color: #333;
-    border-radius: 5px;
+
+    input {
+      font-size: 16px;
+      border: 2px solid #333;
+      border-radius: 10px;
+    }
   }
 
   .submit-btn {
