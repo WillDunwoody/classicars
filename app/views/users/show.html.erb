@@ -8,16 +8,12 @@
   <h1>Upcoming Bookings:</h1>
   <div class="card-product-container">
 
-    <% @user.bookings.each do |booking| %>
+    <% current_user.bookings.each do |booking| %>
 
       <% if !(booking.end_date.nil?) && booking.end_date > DateTime.now %>
 
-        <% if booking.nil? %>
-          <p>You don't have any upcoming bookings</p>
-        <% else %>
-
           <% vehicle = @vehicles.find(booking.vehicle_id) %>
-          <% date = booking.end_date - booking.start_date %>
+          <% date = (booking.end_date - booking.start_date).to_i %>
           <% price = date * vehicle.price %>
 
           <div class="remove-link-decoration">
@@ -34,23 +30,18 @@
               </div>
             <% end %>
           </div>
-        <% end %>
       <% end %>
 
     <% end %>
 
     <h1>Previous Bookings:</h1>
 
-    <% @user.bookings.each do |booking| %>
+    <% current_user.bookings.each do |booking| %>
 
       <% if !(booking.end_date.nil?) && booking.end_date < DateTime.now %>
 
-        <% if booking.empty? %>
-          <p>You don't have any previous bookings</p>
-        <% else %>
-
           <% vehicle = @vehicles.find(booking.vehicle_id) %>
-          <% date = booking.end_date - booking.start_date %>
+          <% date = (booking.end_date - booking.start_date).to_i %>
           <% price = date * vehicle.price %>
 
           <% if booking.start_date < DateTime.now %>
@@ -71,12 +62,10 @@
               <% end %>
             </div>
           <% end %>
-        <% end %>
       <% end %>
     <% end %>
   </div>
-  <h1>My Cars:</h1>
-  <%= link_to "Add Car", new_user_vehicle_path(current_user) %>
+  <%= link_to "Add Car", new_user_vehicle_path(current_user), class:"add-btn" %>
 </div>
 
 <%=render '/components/footer'%>

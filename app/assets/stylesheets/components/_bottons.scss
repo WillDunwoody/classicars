@@ -1,0 +1,12 @@
+.add-btn {
+  background-color: #333;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 5px;
+
+  &:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+}

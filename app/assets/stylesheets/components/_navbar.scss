@@ -1,12 +1,10 @@
 .nav-bar {
-  z-index: 1;
   width: 100%;
   text-decoration: none;
   padding: 10px 20px;
   padding-right: 30px;
   margin-bottom: 20px;
   background-color: white;
-  opacity: .50;
 
   ul {
     display: flex;
@@ -15,13 +13,10 @@
     padding: 0;
 
     a {
+      z-index: 1;
       text-decoration: none;
-<<<<<<< HEAD
       color: black;
-=======
-      color: rgb(7, 6, 6);
       font-weight: bold;
->>>>>>> 322a5850586f6a78724e878b848596842070cf0d
     }
 
     li:hover {

@@ -1,7 +1,7 @@
 <div class="nav-bar-white remove-link-decoration">
   <ul>
     <li class="logo"><%= link_to "ClassiCars", "/"%></li>
-    <% if @user.nil? %>
+    <% if current_user.nil? %>
       <li> <%= link_to "Sign in/Sign up", user_session_path %></li>
       <li><%=link_to "Rent a classic", vehicles_path%></li>
     <% else %>
