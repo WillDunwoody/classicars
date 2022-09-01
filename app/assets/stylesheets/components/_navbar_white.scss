@@ -5,6 +5,11 @@
   width: 100%;
   padding: 32px;
 
+  a.dropdown-item {
+    text-decoration: none;
+    color: rgb(8, 8, 8);
+  }
+
   ul {
     display: flex;
     list-style: none;
