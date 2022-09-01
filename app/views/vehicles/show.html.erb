@@ -45,19 +45,20 @@
       </div>
     </div>
 
-    <div class="book-form">
-      <div class="simple-form-container ">
-        <%= simple_form_for [@vehicle, @booking] do |f| %>
-          <div class="dates">
-            <%= f.input :start_date, html5: true %>
-          </div>
-          <div class="dates">
-            <%= f.input :end_date, html5: true %>
-          </div>
-          <%= f.submit "Book", class: 'book-btn' %>
-        <% end %>
+      <div class="book-form">
+        <div class="simple-form-container ">
+          <%= simple_form_for [@vehicle, @booking] do |f| %>
+            <div class="dates">
+              <%= f.date_field :start_date, html5: true, as: :date, value: params[:from] %>
+            </div>
+            <div class="dates">
+              <%= f.date_field :end_date, html5: true, value: params[:to] %>
+            </div>
+            <%= f.submit "Book", class: 'book-btn' %>
+          <% end %>
+        </div>
+
       </div>
-    </div>
   </div>
 </div>
 
