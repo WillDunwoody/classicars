@@ -4,6 +4,7 @@ class VehiclesController < ApplicationController
 
   def index
     @vehicles = Vehicle.all
+    @user = current_user
 
     @vehicles = policy_scope(Vehicle)
   end
@@ -32,6 +33,7 @@ class VehiclesController < ApplicationController
 
   def show
     @booking = Booking.new
+    @user = current_user
     authorize @vehicle
   end
 
