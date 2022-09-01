@@ -19,6 +19,11 @@ gem "pundit"
 
 gem "geocoder"
 
+gem "cloudinary"
+
+gem 'country_select'
+
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
