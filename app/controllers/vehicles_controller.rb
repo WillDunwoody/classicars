@@ -13,7 +13,6 @@ class VehiclesController < ApplicationController
 
   def new
     @vehicle = Vehicle.new
-    @user = current_user
     authorize @vehicle
   end
 
@@ -38,7 +37,6 @@ class VehiclesController < ApplicationController
 
   def show
     @booking = Booking.new
-    @user = current_user
     authorize @vehicle
   end
 

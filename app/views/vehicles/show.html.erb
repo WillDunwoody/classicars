@@ -1,50 +1,49 @@
 <%= render '/components/navbar' %>
-  <div class="show-container ">
+<div class="show-container ">
+  <div class="pictures mt-5">
+    <div class="main-picture ">
+      <% if @vehicle.photos.first.nil? %>
+        <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
+      <% else %>
+        <img src="<%= cl_image_path @vehicle.photos.first.key, crop: :fill %>">
+      <% end %>
+    </div>
 
-    <div class="pictures mt-5">
-      <div class="main-picture ">
+    <div class="secondary-pictures ">
+      <div class="secondary-pic mb-3">
+        <% if @vehicle.photos.first.nil? %>
+            <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
+        <% else %>
+          <img src="<%= cl_image_path @vehicle.photos.second.key, crop: :fill %>">
+        <% end %>
+      </div>
+
+      <div class="secondary-pic">
         <% if @vehicle.photos.first.nil? %>
           <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
         <% else %>
-          <img src="<%= cl_image_path @vehicle.photos.first.key, crop: :fill %>">
+          <img src="<%= cl_image_path @vehicle.photos.third.key, crop: :fill %>">
         <% end %>
       </div>
+    </div>
+  </div>
 
-      <div class="secondary-pictures ">
-        <div class="secondary-pic mb-3">
-           <% if @vehicle.photos.first.nil? %>
-              <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
-           <% else %>
-             <img src="<%= cl_image_path @vehicle.photos.second.key, crop: :fill %>">
-        <% end %>
-
+  <div class="info-container ">
+    <div class="description">
+      <div class="profile">
+        <div class="pp"></div>
+        <div>
+          <h1><%= @vehicle.make %> <%= @vehicle.model %></h1>
+          <p><%= @vehicle.year %>, <%= @vehicle.passengers %> seats</p>
         </div>
-        <div class="secondary-pic">
-         <% if @vehicle.photos.first.nil? %>
-            <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
-          <% else %>
-            <img src="<%= cl_image_path @vehicle.photos.third.key, crop: :fill %>">
-          <% end %>
+      </div>
+      <div class="test">
+        <div class="location">Rome, Italy</div>
+        <div class="vehicle-description">
+          <%= @vehicle.description %>
         </div>
       </div>
     </div>
-
-    <div class="info-container ">
-      <div class="description">
-        <div class="profile">
-          <div class="pp"></div>
-          <div>
-            <h1><%= @vehicle.make %> <%= @vehicle.model %></h1>
-            <p><%= @vehicle.year %>, <%= @vehicle.passengers %> seats</p>
-          </div>
-        </div>
-        <div class="test">
-          <div class="location">Rome, Italy</div>
-          <div class="vehicle-description">
-            <%= @vehicle.description %>
-          </div>
-        </div>
-      </div>
 
       <div class="book-form">
         <div class="simple-form-container ">
@@ -62,6 +61,13 @@
       </div>
   </div>
 </div>
+
+<div class="container my-5">
+  <% @vehicle.reviews.each do |vehicle|  %>
+    <p><%= vehicle.rating %></p>
+    <p><%= vehicle.comment %></p>
+  <% end %>
 </div>
+
 
 <%=render '/components/footer'%>
