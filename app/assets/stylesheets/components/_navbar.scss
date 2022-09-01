@@ -6,7 +6,7 @@
   padding-right: 30px;
   margin-bottom: 20px;
   background-color: white;
-  opacity: .50;
+  opacity: 0.5;
 
   ul {
     display: flex;
@@ -16,12 +16,7 @@
 
     a {
       text-decoration: none;
-<<<<<<< HEAD
-      color: black;
-=======
-      color: rgb(7, 6, 6);
-      font-weight: bold;
->>>>>>> 322a5850586f6a78724e878b848596842070cf0d
+      color: #333;
     }
 
     li:hover {
@@ -38,5 +33,4 @@
       font-weight: bold;
     }
   }
-
 }
