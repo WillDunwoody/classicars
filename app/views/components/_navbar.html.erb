@@ -2,12 +2,16 @@
   <ul>
     <li class="logo"><%= link_to "ClassiCars", "/"%></li>
     <% if current_user.nil? %>
-      <li> <%= link_to "Sign in/Sign up", user_session_path %></li>
-      <li><%=link_to "Rent a classic", vehicles_path %></li>
+      <li><%= link_to "Sign in/Sign up", user_session_path %></li>
+      <li><%= link_to "Rent a classic", vehicles_path %></li>
     <% else %>
       <li><%=link_to "Rent a classic", vehicles_path %></li>
       <li class="nav-item dropdown">
-        <%= cl_image_tag current_user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar-large dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% if current_user.photo.key.nil? %>
+          <%= image_tag "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnVubnklMjBmYWNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60", class: "avatar-large dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% else %>
+          <%= cl_image_tag current_user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar-large dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% end %>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <%= link_to "My bookings", user_path(current_user), class: "dropdown-item" %>
           <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
