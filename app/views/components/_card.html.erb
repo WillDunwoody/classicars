@@ -1,5 +1,5 @@
 <div class="remove-link-decoration">
-  <%= link_to vehicle_path(vehicle.id) do %>
+  <%= link_to vehicle_path(vehicle.id, from: params[:from], to: params[:to]) do %>
     <div class="card mb-3" >
       <% if vehicle.photos.first.nil? %>
         <img src="https://source.unsplash.com/1600x900/?<%= vehicle.make %>%20<%= vehicle.model %>car" class="card-img-top" alt="...">
