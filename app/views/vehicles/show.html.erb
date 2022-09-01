@@ -1,10 +1,13 @@
-<%= render '/components/navbar' %>
+<div class="nav-conatiner mb-5">
+  <%= render '/components/navbar' %>
+  <%= render '/components/logo' %>
+</div>
 
-<div class="container">
-<h1><%= @vehicle.make %> <%= @vehicle.model %></h1>
+<div class="container mt-5">
+<h1 class="mb-5"><%= @vehicle.make %> <%= @vehicle.model %></h1>
   <div class="show-container ">
 
-    <div class="pictures ">
+    <div class="pictures mt-5">
       <div class="main-picture ">
         <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="">
       </div>
@@ -14,9 +17,7 @@
           <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="">
         </div>
         <div class="secondary-pic">
-
-          <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt=""> 
-
+          <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="">
         </div>
       </div>
     </div>
@@ -53,3 +54,7 @@
 
       </div>
   </div>
+</div>
+</div>
+
+<%=render '/components/footer'%>
