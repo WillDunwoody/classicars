@@ -85,5 +85,56 @@ p {
     padding: 32px;
     border: 1px solid #aaa;
     border-radius: 10px;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    label {
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    input {
+      width: 210px;
+      height: 42px;
+      padding: 0 16px;
+      border: 1px solid #aaa;
+      border-radius: 10px;
+    }
+
+    .to-date {
+      margin: 32px 0;
+    }
+
+    .total {
+      margin-top: 32px;
+      font-size: 12px;
+      font-weight: 700;
+
+      .total-price {
+        font-size: 20px;
+        font-weight: 300;
+      }
+    }
+
+    .book-btn {
+      input {
+        width: 100%;
+        font-weight: 700;
+        color: #333;
+        background-color: #fff;
+        border: 2px solid #333;
+        transition: 0.2s;
+
+        &:hover {
+          color: #fff;
+          background-color: #333;
+          border: none;
+        }
+      }
+    }
   }
 }

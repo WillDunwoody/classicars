@@ -4,7 +4,7 @@
   padding-top: 16px;
   text-align: center;
   font-size: 48px;
-  font-weight: 500;
+  font-weight: 400;
   color: #333;
 
   input {
@@ -66,13 +66,14 @@
   }
 
   ::placeholder {
+    font-weight: 300;
     color: #333;
   }
 
   .submit-btn {
     width: 110px;
     height: 42px;
-    font-weight: bold;
+    font-weight: 700;
     color: #333;
     background-color: #fff;
     border: 2px solid #333;

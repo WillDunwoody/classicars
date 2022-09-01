@@ -45,20 +45,31 @@
           </div>
         </div>
       </div>
-
       <div class="book-form">
-        <div class="simple-form-container ">
-          <%= simple_form_for [@vehicle, @booking] do |f| %>
-            <div class="dates">
-              <%= f.date_field :start_date, html5: true, as: :date, value: params[:from] %>
-            </div>
-            <div class="dates">
-              <%= f.date_field :end_date, html5: true, value: params[:to] %>
-            </div>
+        <%= simple_form_for [@vehicle, @booking] do |f| %>
+          <div class="from-date">
+            <%= label_tag 'from', 'FROM' %>
+            <%= f.date_field :start_date, html5: true, as: :date, value: params[:from] %>
+          </div>
+          <div class="to-date">
+            <%= label_tag 'to', 'TO' %>
+            <%= f.date_field :end_date, html5: true, value: params[:to] %>
+          </div>
+          <div class="book-btn">
             <%= f.submit "Book", class: 'book-btn' %>
-          <% end %>
-        </div>
-
+          </div>
+          <div class="total">
+            <span>TOTAL</span>
+            <span class="total-price">
+            <%
+              from = Date.parse(params[:from])
+              to = Date.parse(params[:to])
+              days = (to - from).to_i
+              price = days * @vehicle.price
+            %>
+            <%= price %> €</span>
+          </div>
+        <% end %>
       </div>
   </div>
 </div>

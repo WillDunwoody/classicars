@@ -3,7 +3,7 @@
   padding-top: 16px;
   text-align: center;
   font-size: 48px;
-  font-weight: 500;
+  font-weight: 400;
   color: white;
 
   input {
@@ -42,6 +42,7 @@
   }
 
   ::placeholder {
+    font-weight: 300;
     color: #fff;
   }
 
@@ -78,7 +79,7 @@
   .submit-btn {
     width: 110px;
     height: 42px;
-    font-weight: bold;
+    font-weight: 700;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.1);
     border: 1px solid #fff;
