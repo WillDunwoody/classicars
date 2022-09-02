@@ -38,7 +38,7 @@
 
     <% end %>
 
-    <h1>Previous bookings</h1>
+    <h1 class="prev-ttl">Previous bookings</h1>
 
     <% current_user.bookings.each do |booking| %>
 
@@ -94,9 +94,8 @@
               <div class="card-product-infos">
                 <div>
                   <h2 style="color:#333;padding-bottom:5px"><%= vehicle.make %> <%= vehicle.model %></h2>
-                  <p style="color:#333;padding-top:5px;opacity:0.7;" class="douze"><%= vehicle.description %></p>
                 </div>
-                <p class="price-upcoming"><%= vehicle.price %> €</p>
+                <p style="color:#333" class="douze"><%= vehicle.price %> €</p>
                 <div class="mycars-btns">
                   <%= link_to "Edit", edit_vehicle_path(vehicle.id), class: "cta-edit" %>
                   <%= button_to vehicle_path(vehicle), method: :delete, class: "cta-del" do %>
@@ -111,3 +110,4 @@
     <% end %>
   <% end %>
 </div>
+<div style="height:128px"></div>

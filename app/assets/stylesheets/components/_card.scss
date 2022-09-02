@@ -6,6 +6,7 @@
   justify-content: space-between;
   width: 100%;
   flex-wrap: wrap;
+  margin-bottom: 16px;
 }
 
 .card {
@@ -88,7 +89,6 @@
 
 .card-product-container {
   h1 {
-    margin-top: 96px;
     margin-bottom: 64px;
   }
 }
@@ -158,6 +158,10 @@
 }
 
 .mc-ttl {
+  margin: 96px 0 32px 0;
+}
+
+.prev-ttl {
   margin-top: 96px;
 }
 
