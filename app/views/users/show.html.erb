@@ -7,7 +7,7 @@
 
     <% current_user.bookings.each do |booking| %>
 
-      <% if !(booking.end_date.nil?) && booking.end_date > DateTime.now %>
+      <% if !(booking.end_date.nil?) && booking.start_date > DateTime.now %>
 
         <% vehicle = @vehicles.find(booking.vehicle_id) %>
         <% date = (booking.end_date - booking.start_date).to_i %>
@@ -75,10 +75,11 @@
       <% end %>
     <% end %>
   </div>
-  <% unless @mycars.empty? %>
+
+  <% unless current_user.vehicles.empty? %>
     <h1 class="mc-ttl">My cars</h1>
 
-    <% @mycars.each do |vehicle| %>
+    <% current_user.vehicles.each do |vehicle| %>
 
         <div class="remove-link-decoration">
 
@@ -96,8 +97,8 @@
                   <p style="color:#333;padding-top:5px;opacity:0.7;" class="douze"><%= vehicle.description %></p>
                 </div>
                 <p class="price-upcoming"><%= vehicle.price %> €</p>
-                <%= link_to "Edit your car", edit_user_vehicle_path(vehicle.id), class: "cta-lar" %>
-                <%= link_to "Edit your car", edit_user_vehicle_path(vehicle.id), class: "cta-lar" %>
+              <%= link_to "Edit", edit_vehicle_path(vehicle.id), class: "cta-lar" %>
+              <%= button_to 'Delete', vehicle_path(vehicle), method: :delete, class: "cta-lar" %>
               </div>
             </div>
 
