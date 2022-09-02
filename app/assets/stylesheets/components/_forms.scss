@@ -8,11 +8,11 @@
 }
 
 .signup-container {
-    height: 400px;
-    width: 400px;
-    margin-bottom: 100px;
-    display: flex;
-    justify-content: center;
+  height: 400px;
+  width: 400px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
 
   .signup-input {
     width: 355px;
@@ -42,7 +42,6 @@
       color: #fff;
     }
   }
-
 }
 
 // Log In Form
@@ -56,7 +55,7 @@
 }
 
 .login-container {
-    height: 300px;
+  height: 300px;
 
   .login-input {
     display: flex;
@@ -72,7 +71,6 @@
       border-radius: 10px;
     }
   }
-
 }
 .submit-btn {
   width: 110px;
@@ -90,6 +88,7 @@
   }
 }
 
+// Vehicle form
 
 .main-newcar-container {
   width: 100vw;
@@ -99,7 +98,7 @@
 }
 
 .newcar-container {
-    height: 700px;
+  height: 700px;
 
   .newcar-input {
     display: flex;
@@ -115,7 +114,6 @@
       border-radius: 10px;
     }
   }
-
 }
 .submit-btn {
   width: 110px;

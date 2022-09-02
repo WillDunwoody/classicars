@@ -56,13 +56,13 @@
             <%= f.date_field :end_date, html5: true, value: params[:to] %>
           </div>
           <div class="book-btn">
-            <%= f.submit "Book", class: 'book-btn' %>
+            <%= f.submit "Book" %>
           </div>
           <div class="total">
             <span>TOTAL</span>
             <span class="total-price">
             <% if (params[:from].nil? || params[:from].empty?  || params[:to].nil? || params[:to].empty?) %>
-              <%= 0 %> €</span>
+              Choose dates</span>
             <% else %>
               <%
                 from = Date.parse(params[:from])
