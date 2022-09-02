@@ -30,17 +30,19 @@
 
   <div class="info-container ">
     <div class="description">
-      <div class="profile">
-        <div class="pp"></div>
-        <div>
-          <h1><%= @vehicle.make %> <%= @vehicle.model %></h1>
-          <p><%= @vehicle.year %>, <%= @vehicle.passengers %> seats</p>
+      <div>
+        <div class="profile">
+          <div class="pp"></div>
+          <div>
+            <h1><%= @vehicle.make %> <%= @vehicle.model %></h1>
+            <p><%= @vehicle.year %>, <%= @vehicle.passengers %> seats</p>
+          </div>
         </div>
-      </div>
-      <div class="test">
-        <div class="location">Rome, Italy</div>
-        <div class="vehicle-description">
-          <%= @vehicle.description %>
+        <div class="test">
+          <div class="location"><%= @vehicle.city %>, <%= @vehicle.country %></div>
+          <div class="vehicle-description">
+            <%= @vehicle.description %>
+          </div>
         </div>
       </div>
       <div class="book-form">
@@ -54,21 +56,26 @@
             <%= f.date_field :end_date, html5: true, value: params[:to] %>
           </div>
           <div class="book-btn">
-            <%= f.submit "Book", class: 'book-btn' %>
+            <%= f.submit "Book" %>
           </div>
           <div class="total">
             <span>TOTAL</span>
             <span class="total-price">
-            <%
-              from = Date.parse(params[:from])
-              to = Date.parse(params[:to])
-              days = (to - from).to_i
-              price = days * @vehicle.price
-            %>
-            <%= price %> €</span>
+            <% if (params[:from].nil? || params[:from].empty?  || params[:to].nil? || params[:to].empty?) %>
+              Choose dates</span>
+            <% else %>
+              <%
+                from = Date.parse(params[:from])
+                to = Date.parse(params[:to])
+                days = (to - from).to_i
+                price = days * @vehicle.price
+              %>
+              <%= price %> €</span>
+            <% end %>
           </div>
         <% end %>
       </div>
+    </div>
   </div>
 </div>
 
@@ -78,6 +85,3 @@
     <p><%= vehicle.comment %></p>
   <% end %>
 </div>
-
-
-

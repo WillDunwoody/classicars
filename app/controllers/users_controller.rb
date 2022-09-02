@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   def show
     @vehicles = Vehicle.all
-    @user = User.find(params[:id])
-    authorize @user
+    @mycars = current_user.vehicles
+    authorize current_user
   end
 
   # def user_params
