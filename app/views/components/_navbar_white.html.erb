@@ -3,9 +3,9 @@
     <li class="logo"><%= link_to "ClassiCars", "/"%></li>
     <% if current_user.nil? %>
       <li><%= link_to "Sign in/Sign up", user_session_path %></li>
-      <li class="cta-rent"><%= link_to "Rent a classic", vehicles_path %></li>
+      <li class="cta-rent"><%= link_to "Rent your classic", user_session_path %></li>
     <% else %>
-      <li><%=link_to "Rent a classic", vehicles_path %></li>
+      <li><%=link_to "Rent your classic", new_user_vehicle_path(current_user) %></li>
       <li class="nav-item dropdown">
       <% if current_user.photo.key.nil? %>
         <%= image_tag "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnVubnklMjBmYWNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60", class: "avatar-large dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
