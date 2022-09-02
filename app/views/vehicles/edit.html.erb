@@ -1,12 +1,19 @@
-<div class="container">
-  <%= simple_form_for @vehicle do |f| %>
-    <%= f.input :make %>
-    <%= f.input :model %>
-    <%= f.input :description, as: :text %>
-    <%= f.input :price, as: :float %>
-    <%= f.input :city %>
-    <%= f.input :country %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.submit "Add car"%>
-  <% end %>
+<%= render '/components/navbar'%>
+
+<div class="main-edit-container">
+  <h2 class="mb-5">Edit your car</h2>
+  <div class="edit-container">
+    <%= simple_form_for @vehicle do |f| %>
+      <div class="edit-input">
+        <%= f.input :make %>
+        <%= f.input :model %>
+        <%= f.input :description, as: :text %>
+        <%= f.input :price, as: :float %>
+        <%= f.input :city %>
+        <%= f.input :country %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.submit "Add car", class:"submit-btn"%>
+      </div>
+    <% end %>
+  </div>
 </div>
