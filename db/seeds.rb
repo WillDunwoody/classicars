@@ -44,7 +44,7 @@ new8.save
 
 new9 = Vehicle.new( make:"Mercedes", model:"sl 300", year:"1951", passengers:"2",
   description:"The Mercedes-Benz 300 SL(chassis code W 198) is a two-seat sports car which was produced by Mercedes-Benz as a gullwinged coupe(1954–1957) and roadster(1957–1963).",
-  city:"Londob", country:"England", price:"92", vehicle_type: "car")
+  city:"Londob", country:"UK", price:"92", vehicle_type: "car")
 new9.user = will
 new9.save
 
