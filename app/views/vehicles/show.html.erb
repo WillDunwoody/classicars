@@ -79,9 +79,21 @@
   </div>
 </div>
 
-<div class="container my-5">
+<div class="review-container">
   <% @vehicle.reviews.each do |vehicle|  %>
-    <p><%= vehicle.rating %></p>
-    <p><%= vehicle.comment %></p>
+  <div class="review">
+    <div class="review-profile">
+      <div class="review-avatar"></div>
+        <% if @vehicle.reviews.first.user.username.nil? %>
+        <p class="review-name">Greggo</p>
+        <% else %>
+          <%= @vehicle.reviews.first.user.username %>
+        <% end %>
+    </div>
+    <div class="review-content">
+      <div><%= vehicle.rating %> / 5</div>
+      <div class="review-comment"><%= vehicle.comment %></div>
+    </div>
+  </div>
   <% end %>
 </div>

@@ -138,3 +138,48 @@ p {
     }
   }
 }
+
+.review-container {
+  display: flex;
+  justify-content: space-between;
+  width: 1010px;
+  margin: 64px auto;
+
+  .review {
+    .review-profile {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+
+      .review-avatar {
+        width: 48px;
+        height: 48px;
+        margin-right: 16px;
+        border-radius: 100%;
+        background-color: #333;
+      }
+
+      .review-name {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 0;
+      }
+    }
+    .review-content {
+      display: flex;
+      align-items: flex-start;
+      width: 315px;
+      padding: 32px;
+      border-radius: 10px;
+      background-color: rgb(235, 235, 235);
+
+      .review-comment {
+        width: 210px;
+        font-size: 12px;
+        font-weight: 300;
+        padding-left: 32px;
+        word-wrap: break-word;
+      }
+    }
+  }
+}
