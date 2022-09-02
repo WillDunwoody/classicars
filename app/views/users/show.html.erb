@@ -7,7 +7,7 @@
 
     <% current_user.bookings.each do |booking| %>
 
-      <% if !(booking.end_date.nil?) && booking.end_date > DateTime.now %>
+      <% if !(booking.end_date.nil?) && booking.start_date > DateTime.now %>
 
         <% vehicle = @vehicles.find(booking.vehicle_id) %>
         <% date = (booking.end_date - booking.start_date).to_i %>
@@ -75,6 +75,7 @@
       <% end %>
     <% end %>
   </div>
+
   <% unless @mycars.empty? %>
     <h1 class="mc-ttl">My cars</h1>
 
