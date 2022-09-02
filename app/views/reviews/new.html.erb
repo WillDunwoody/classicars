@@ -1,5 +1,14 @@
-<%= simple_form_for [@vehicle, @review] do |f| %>
-  <%= f.input :comment, as: :text %>
-  <%= f.input :rating, as: :integer %>
-  <%= f.submit "Submit Review" %>
-<% end %>
+<%= render '/components/navbar'%>
+
+<div class="main-review-container">
+  <h2 class="mb-5">Leave a Review</h2>
+  <div class="new-review-container">
+    <%= simple_form_for [@vehicle, @review] do |f| %>
+      <div class="new-review-input">
+        <%= f.input :comment, as: :text %>
+        <%= f.input :rating, as: :integer %>
+        <%= f.submit "Submit Review", class:"submit-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>
