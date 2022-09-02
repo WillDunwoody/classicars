@@ -52,8 +52,10 @@ p {
         width: 100px;
         height: 100px;
         margin-right: 32px;
-        background-color: #aaa;
         border-radius: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
       }
 
       h1 {
