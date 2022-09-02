@@ -32,7 +32,11 @@
     <div class="description">
       <div>
         <div class="profile">
-          <div class="pp"></div>
+            <% if @vehicle.user.photo.key.nil? %>
+          <div class="pp" style="background-image: url('https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnVubnklMjBmYWNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60')"></div>
+            <% else %>
+            <div class="pp" style="background-image: url(<%= cl_image_path @vehicle.user.photo.key %>)"></div>          </div>
+            <% end %>
           <div>
             <h1><%= @vehicle.make %> <%= @vehicle.model %></h1>
             <p><%= @vehicle.year %>, <%= @vehicle.passengers %> seats</p>
@@ -85,7 +89,7 @@
     <div class="review-profile">
       <div class="review-avatar"></div>
         <% if @vehicle.reviews.first.user.username.nil? %>
-        <p class="review-name">Greggo</p>
+          <p class="review-name">Greggo</p>
         <% else %>
           <%= @vehicle.reviews.first.user.username %>
         <% end %>

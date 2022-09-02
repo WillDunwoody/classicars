@@ -4,7 +4,7 @@
       <% if vehicle.photos.first.nil? %>
         <img src="https://source.unsplash.com/1600x900/?<%= vehicle.make %>%20<%= vehicle.model %>car" class="card-img-top" alt="...">
       <% else %>
-        <img src="<%= cl_image_path vehicle.photos.first.key, crop: :fill %>">
+        <img src="<%= cl_image_path vehicle.photos.first.key, crop: :fill %>", class="card-img-top">
       <% end %>
       <div style="padding:16px;" class="card-body ">
         <div style="padding: 0;" class="card-footer">
