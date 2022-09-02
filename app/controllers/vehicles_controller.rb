@@ -1,6 +1,6 @@
 class VehiclesController < ApplicationController
   # before_action :authenticate_user!, only:[:new, :create, :edit, :update]
-  before_action :find_vehicle, only: [:edit, :update, :show]
+  before_action :find_vehicle, only: [:edit, :update, :show, :destroy]
 
   def index
     if params[:location].present?
@@ -38,6 +38,13 @@ class VehiclesController < ApplicationController
   def show
     @booking = Booking.new
     authorize @vehicle
+  end
+
+  def destroy
+    @vehicle.destroy
+    authorize @vehicle
+
+    redirect_to user_path(current_user)
   end
 
   private

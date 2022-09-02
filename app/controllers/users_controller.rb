@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def show
     @vehicles = Vehicle.all
-    @mycars = current_user.vehicles
     authorize current_user
   end
 
