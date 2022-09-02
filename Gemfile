@@ -19,6 +19,14 @@ gem "pundit"
 
 gem "geocoder"
 
+gem "cloudinary"
+
+gem 'country_select'
+
+gem "dotenv-rails", groups: [:development, :test]
+
+gem "cloudinary"
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 

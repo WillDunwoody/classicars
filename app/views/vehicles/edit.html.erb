@@ -1,2 +1,12 @@
-<h1>Vehicles#edit</h1>
-<p>Find me in app/views/vehicles/edit.html.erb</p>
+<div class="container">
+  <%= simple_form_for @vehicle do |f| %>
+    <%= f.input :make %>
+    <%= f.input :model %>
+    <%= f.input :description, as: :text %>
+    <%= f.input :price, as: :float %>
+    <%= f.input :city %>
+    <%= f.input :country %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit "Add car"%>
+  <% end %>
+</div>

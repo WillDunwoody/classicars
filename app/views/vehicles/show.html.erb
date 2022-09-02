@@ -1,48 +1,87 @@
 <%= render '/components/navbar' %>
-
-<div class="container">
-  <div class="show-container ">
-
-    <div class="pictures ">
-      <div class="main-picture ">
+<div class="show-container ">
+  <div class="pictures mt-5">
+    <div class="main-picture ">
+      <% if @vehicle.photos.first.nil? %>
         <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
-      </div>
-
-      <div class="secondary-pictures ">
-        <div class="secondary-pic mb-3">
-          <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
-        </div>
-        <div class="secondary-pic">
-          <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round"> 
-        </div>
-      </div>
+      <% else %>
+        <img src="<%= cl_image_path @vehicle.photos.first.key, crop: :fill %>">
+      <% end %>
     </div>
 
-    <div class="info-container ">
-      <div class="location ">
-        <p><%= @vehicle.city %>, <%= @vehicle.country %></p>
+    <div class="secondary-pictures ">
+      <div class="secondary-pic mb-3">
+        <% if @vehicle.photos.first.nil? %>
+            <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
+        <% else %>
+          <img src="<%= cl_image_path @vehicle.photos.second.key, crop: :fill %>">
+        <% end %>
       </div>
 
-      <div class="description-container ">
-        <div class="vehicle-make ">
-          <%= @vehicle.make %>
-          <%= @vehicle.model %>
-        </div>
-        <div class="vehicle-description ">
-          <%= @vehicle.description %>
-        </div>
-      </div>
-      <div class="simple-form-container ">
-        <%= simple_form_for [@vehicle, @booking] do |f| %>
-          <div class="dates">
-            <%= f.input :start_date, order: [:day, :month, :year] %>
-           </div>
-          <div class="dates">
-            <%= f.input :end_date, order: [:day, :month, :year] %>
-          </div>
-          <%= f.submit "Book Now" %>
+      <div class="secondary-pic">
+        <% if @vehicle.photos.first.nil? %>
+          <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
+        <% else %>
+          <img src="<%= cl_image_path @vehicle.photos.third.key, crop: :fill %>">
         <% end %>
       </div>
     </div>
   </div>
+
+  <div class="info-container ">
+    <div class="description">
+      <div>
+        <div class="profile">
+          <div class="pp"></div>
+          <div>
+            <h1><%= @vehicle.make %> <%= @vehicle.model %></h1>
+            <p><%= @vehicle.year %>, <%= @vehicle.passengers %> seats</p>
+          </div>
+        </div>
+        <div class="test">
+          <div class="location"><%= @vehicle.city %>, <%= @vehicle.country %></div>
+          <div class="vehicle-description">
+            <%= @vehicle.description %>
+          </div>
+        </div>
+      </div>
+      <div class="book-form">
+        <%= simple_form_for [@vehicle, @booking] do |f| %>
+          <div class="from-date">
+            <%= label_tag 'from', 'FROM' %>
+            <%= f.date_field :start_date, html5: true, as: :date, value: params[:from] %>
+          </div>
+          <div class="to-date">
+            <%= label_tag 'to', 'TO' %>
+            <%= f.date_field :end_date, html5: true, value: params[:to] %>
+          </div>
+          <div class="book-btn">
+            <%= f.submit "Book" %>
+          </div>
+          <div class="total">
+            <span>TOTAL</span>
+            <span class="total-price">
+            <% if (params[:from].nil? || params[:from].empty?  || params[:to].nil? || params[:to].empty?) %>
+              Choose dates</span>
+            <% else %>
+              <%
+                from = Date.parse(params[:from])
+                to = Date.parse(params[:to])
+                days = (to - from).to_i
+                price = days * @vehicle.price
+              %>
+              <%= price %> €</span>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container my-5">
+  <% @vehicle.reviews.each do |vehicle|  %>
+    <p><%= vehicle.rating %></p>
+    <p><%= vehicle.comment %></p>
+  <% end %>
 </div>

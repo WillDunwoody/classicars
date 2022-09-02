@@ -3,9 +3,12 @@ class VehiclesController < ApplicationController
   before_action :find_vehicle, only: [:edit, :update, :show]
 
   def index
-    @vehicles = Vehicle.all
-
-    @vehicles = policy_scope(Vehicle)
+    if params[:location].present?
+      @vehicles = policy_scope(Vehicle).where(city: params[:location])
+    else
+      @vehicles = policy_scope(Vehicle)
+    end
+    @user = current_user
   end
 
   def new
@@ -19,6 +22,8 @@ class VehiclesController < ApplicationController
     @vehicle.user = current_user
     @vehicle.save
     authorize @vehicle
+
+    redirect_to user_path(current_user)
   end
 
   def edit
@@ -42,6 +47,6 @@ class VehiclesController < ApplicationController
   end
 
   def vehicle_params
-    params.require(:vehicle).permit(:model, :make, :year, :vehicle_type, :passengers, :description, :location, :price)
+    params.require(:vehicle).permit(:model, :make, :year, :passengers, :description, :location, :price, photos: [])
   end
 end

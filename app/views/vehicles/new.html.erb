@@ -1,2 +1,21 @@
-<h1>Vehicles#new</h1>
-<p>Find me in app/views/vehicles/new.html.erb</p>
+<%= render '/components/navbar' %>
+
+<div class="main-newcar-container">
+  <h2 class="mb-5">New Vehicle</h2>
+  <div class="newcar-container">
+    <%= simple_form_for [current_user, @vehicle] do |f| %>
+      <div class="newcar-input">
+        <%= f.input :make %>
+        <%= f.input :model %>
+        <%= f.input :year, as: :date, html5: true %>
+        <%= f.input :passengers, as: :integer %>
+        <%= f.input :description, as: :text %>
+        <%= f.input :price, as: :float %>
+        <%= f.input :city %>
+        <%= f.input :country %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.submit "Add car", class:"submit-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>

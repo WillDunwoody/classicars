@@ -1,8 +1,12 @@
-.nav-bar {
+.nav-bar-white {
   z-index: 1;
   width: 100%;
   padding: 32px;
 
+  a.dropdown-item {
+    text-decoration: none;
+    color: rgb(8, 8, 8);
+  }
 
   ul {
     display: flex;
@@ -13,7 +17,7 @@
 
     a {
       text-decoration: none;
-      color: rgb(0, 0, 0);
+      color: #fff;
     }
 
     li:hover {
@@ -22,8 +26,7 @@
 
     .logo {
       flex-grow: 1;
-      font-weight: 400;
-
+      font-weight: 700;
     }
 
     .cta-rent {

@@ -1,13 +1,17 @@
 <div class="remove-link-decoration">
-  <%= link_to vehicle_path(vehicle.id) do %>
-    <div class="card mb-3" >
-      <img src="https://source.unsplash.com/1600x900/?<%= vehicle.make %>%20<%= vehicle.model %>car" class="card-img-top" alt="...">
-      <div class="card-body ">
-        <div class="card-footer">
+  <%= link_to vehicle_path(vehicle.id, from: params[:from], to: params[:to]) do %>
+    <div class="card" >
+      <% if vehicle.photos.first.nil? %>
+        <img src="https://source.unsplash.com/1600x900/?<%= vehicle.make %>%20<%= vehicle.model %>car" class="card-img-top" alt="...">
+      <% else %>
+        <img src="<%= cl_image_path vehicle.photos.first.key, crop: :fill %>">
+      <% end %>
+      <div style="padding:16px;" class="card-body ">
+        <div style="padding: 0;" class="card-footer">
           <h3 ><%= vehicle.make %> <%= vehicle.model %></h3>
           <p><%= vehicle.city %>, <%= vehicle.country %></p>
         </div>
-        <p>€<%= vehicle.price %> <span class="per-day">PER DAY</span></p>
+        <p class="price-index"><%= vehicle.price %>€<span class="per-day"> / DAY</span></p>
       </div>
     </div>
   <% end %>
