@@ -1,6 +1,6 @@
 footer {
   width: 100%;
-  background-color: rgb(235, 235, 235);
+  background-color: #333;
 
   .footer-container {
     display: flex;
@@ -9,14 +9,14 @@ footer {
     margin: 0 auto;
     padding: 64px 0 32px 0;
     font-size: 12px;
-    color: #333;
+    color: #fff;
 
     .top-footer {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
       padding-bottom: 32px;
-      border-bottom: 1px solid rgb(215, 215, 215);
+      border-bottom: 1px solid #fff;
 
       .logo-footer {
         font-size: 16px;
@@ -36,28 +36,32 @@ footer {
           margin-top: 8px;
 
           input {
-            height: 28px;
-            border: 1px solid rgb(215, 215, 215);
+            height: 34px;
+            border: none;
             border-radius: 4px;
+
+            &:focus {
+              outline: none;
+            }
           }
 
           .newsletter-name {
             width: 110px;
             padding-left: 16px;
-            background-color: #f8f8f8;
+            background-color: rgb(64, 64, 64);
           }
 
           .newsletter-email {
             width: 280px;
             margin: 0 8px;
             padding-left: 16px;
-            background-color: #f8f8f8;
+            background-color: rgb(64, 64, 64);
           }
 
           .newsletter-btn {
             width: 110px;
-            color: #fff;
-            background-color: #333;
+            color: #333;
+            background-color: #fff;
           }
         }
       }
