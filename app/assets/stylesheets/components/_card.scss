@@ -160,3 +160,38 @@
 .mc-ttl {
   margin-top: 96px;
 }
+
+.mycars-btns {
+  display: flex;
+
+  .cta-edit {
+    width: 90px;
+    color: #333;
+    padding: 8px 0;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 10px;
+    border: 2px solid #333;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: #333;
+      color: #fff !important;
+    }
+  }
+
+  .cta-del {
+    width: 38px;
+    height: 38px;
+    background-color: rgb(251, 103, 103);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    margin-left: 16px;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: rgb(255, 72, 72);
+    }
+  }
+}
