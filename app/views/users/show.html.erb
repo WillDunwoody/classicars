@@ -18,7 +18,11 @@
           <%= link_to vehicle_path(vehicle.id) do %>
 
             <div class="card-product">
-              <img src="https://source.unsplash.com/1600x900/?<%= vehicle.make %>%20<%= vehicle.model %>car" class="card-img-top" alt="..." />
+               <% if vehicle.photos.first.nil? %>
+                  <img src="https://source.unsplash.com/1600x900/?<%= vehicle.make %>%20<%= vehicle.model %>car" class="card-img-top" alt="..." />
+                <% else %>
+                  <img src="<%= cl_image_path vehicle.photos.first.key, crop: :fill %>", class="card-img-top">
+                <% end %>
               <div class="card-product-infos">
                 <div>
                   <h2 style="color:#333;padding-bottom:5px"><%= vehicle.make %> <%= vehicle.model %></h2>
@@ -50,7 +54,11 @@
             <%= link_to vehicle_path(vehicle.id) do %>
 
               <div class="card-product">
-                <img src="https://source.unsplash.com/1600x900/?<%= vehicle.make %>%20<%= vehicle.model %>car" class="card-img-top" alt="..." />
+                <% if vehicle.photos.first.nil? %>
+                  <img src="https://source.unsplash.com/1600x900/?<%= vehicle.make %>%20<%= vehicle.model %>car" class="card-img-top" alt="..." />
+                <% else %>
+                  <img src="<%= cl_image_path vehicle.photos.first.key, crop: :fill %>", class="card-img-top">
+                <% end %>
                 <div class="card-product-infos">
                   <div class="booking-infos">
                     <h2><%= vehicle.make %> <%= vehicle.model %></h2>
@@ -67,28 +75,34 @@
       <% end %>
     <% end %>
   </div>
-  <h1 class="mc-ttl">My cars</h1>
+  <% unless @mycars.empty? %>
+    <h1 class="mc-ttl">My cars</h1>
 
-  <% @mycars.each do |vehicle| %>
+    <% @mycars.each do |vehicle| %>
 
-      <div class="remove-link-decoration">
+        <div class="remove-link-decoration">
 
-        <%= link_to vehicle_path(vehicle.id) do %>
+          <%= link_to vehicle_path(vehicle.id) do %>
 
-          <div class="card-product">
-            <img src="https://source.unsplash.com/1600x900/?<%= vehicle.make %>%20<%= vehicle.model %>car" class="card-img-top" alt="..." />
-            <div class="card-product-infos">
-              <div>
-                <h2 style="color:#333;padding-bottom:5px"><%= vehicle.make %> <%= vehicle.model %></h2>
-                <p style="color:#333;padding-top:5px;opacity:0.7;" class="douze"><%= vehicle.description %></p>
+            <div class="card-product">
+               <% if vehicle.photos.first.nil? %>
+                  <img src="https://source.unsplash.com/1600x900/?<%= vehicle.make %>%20<%= vehicle.model %>car" class="card-img-top" alt="..." />
+                <% else %>
+                  <img src="<%= cl_image_path vehicle.photos.first.key, crop: :fill %>", class="card-img-top">
+                <% end %>
+              <div class="card-product-infos">
+                <div>
+                  <h2 style="color:#333;padding-bottom:5px"><%= vehicle.make %> <%= vehicle.model %></h2>
+                  <p style="color:#333;padding-top:5px;opacity:0.7;" class="douze"><%= vehicle.description %></p>
+                </div>
+                <p class="price-upcoming"><%= vehicle.price %> €</p>
+              <%= link_to "Edit your car", edit_user_vehicle_path(vehicle.id), class: "cta-lar" %>
               </div>
-              <p class="price-upcoming"><%= vehicle.price %> €</p>
-            <%= link_to "Edit your car", edit_user_vehicle_path(vehicle.id), class: "cta-lar" %>
             </div>
-          </div>
 
-        <% end %>
-      </div>
+          <% end %>
+        </div>
+    <% end %>
   <% end %>
 
 
