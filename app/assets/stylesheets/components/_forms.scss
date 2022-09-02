@@ -198,3 +198,61 @@
 .mb-5 {
   margin-top: 50px;
 }
+
+// Edit your car form
+.main-edit-container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 300px;
+  margin-top: 15px;
+}
+
+.edit-container {
+  height: 700px;
+
+  .edit-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    height: 250px;
+    color: #333;
+
+
+    input {
+      font-size: 16px;
+      border: 2px solid #333;
+      border-radius: 10px;
+      width: 600px;
+      margin-bottom: 8px;
+    }
+  }
+  .form-control{
+    border-radius: 10px !important;
+    border: 2px solid #333;
+    width: 600px;
+  }
+
+}
+
+.submit-btn {
+  width: 150px !important;
+  height: 42px;
+  font-weight: 700;
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #333;
+  transition: 0.2s;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #333;
+    color: #fff;
+  }
+}
+
+.mb-5 {
+  margin-top: 50px;
+}
