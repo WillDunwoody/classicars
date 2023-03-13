@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show]
+  
   resources :vehicles, only: [:new, :create]
 end
