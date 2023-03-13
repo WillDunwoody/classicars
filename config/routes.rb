@@ -12,5 +12,4 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     resources :vehicles, only: [:new, :create]
   end
-
 end
