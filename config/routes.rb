@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
 
-  resources :users, only: [:show]
-  resources :vehicles, only: [:new, :create]
+  resources :users, only: [:show] do
+    resources :vehicles, only: [:new, :create]
+  end
 end
