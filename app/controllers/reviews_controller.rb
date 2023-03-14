@@ -1,21 +1,22 @@
 class ReviewsController < ApplicationController
   def new
     @review = Review.new
-    @vehicle = Vehicle.find(params[:vehicle_id])
+    @booking = Booking.find(params[:booking_id])
 
     authorize @review
   end
 
   def create
     @review = Review.new(review_params)
-    @vehicle = Vehicle.find(params[:vehicle_id])
-    @review.vehicle = @vehicle
-    @review.user = current_user
-    @review.save
-
+    @booking = Booking.find(params[:booking_id])
+    @review.booking = @booking
     authorize @review
 
-    redirect_to user_path(current_user)
+    if @review.save!
+      redirect_to user_path(current_user)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private

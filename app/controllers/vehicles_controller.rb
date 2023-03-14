@@ -37,8 +37,10 @@ class VehiclesController < ApplicationController
 
   def show
     @booking = Booking.new
-    authorize @vehicle
+    @booking_review = Booking.where(user: current_user, vehicle: @vehicle).first
+    @review = Review.new
 
+    authorize @vehicle
   end
 
   def destroy
