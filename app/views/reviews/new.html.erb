@@ -3,7 +3,7 @@
 <div class="main-review-container">
   <h2 class="mb-5">Leave a Review</h2>
   <div class="new-review-container">
-    <%= simple_form_for [@vehicle, @review] do |f| %>
+    <%= simple_form_for [@booking, @review] do |f| %>
       <div class="new-review-input">
         <%= f.input :comment, as: :text %>
         <%= f.input :rating, as: :integer %>

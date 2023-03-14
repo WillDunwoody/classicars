@@ -9,7 +9,7 @@
       <% end %>
     </div>
 
-    <div class="secondary-pictures ">
+    <div class="secondary-pictures">
       <div class="secondary-pic mb-3">
         <% if @vehicle.photos.first.nil? %>
             <img src="https://source.unsplash.com/1600x900/?<%= @vehicle.make %>%20<%= @vehicle.model %>car" alt="" class="border-round">
@@ -87,7 +87,7 @@
 
 <div class="review-container">
   <% @vehicle.reviews.each do |vehicle|  %>
-  <% @user = User.find(vehicle.user_id) %>
+  <% @user = User.find(vehicle.booking.user_id) %>
   <div class="review">
     <div class="review-profile">
       <% if @user.photo.key.nil? %>
@@ -107,4 +107,20 @@
     </div>
   </div>
   <% end %>
+
+  <% if @booking_review %>
+    <div class="main-review-container">
+      <h2 class="mb-5">Leave a Review</h2>
+      <div class="new-review-container">
+        <%= simple_form_for [@booking_review, @review] do |f| %>
+          <div class="new-review-input">
+            <%= f.input :comment, as: :text %>
+            <%= f.input :rating, as: :integer %>
+            <%= f.submit "Submit Review", class:"submit-btn" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
 </div>
