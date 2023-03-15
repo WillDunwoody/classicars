@@ -1,9 +1,13 @@
-  <%= render '/components/navbar' %>
-  <%= render '/components/main_form_black' %>
+<%= render '/components/navbar' %>
+<%= render '/components/main_form_black' %>
 <div class="container">
   <div class="card-container mt-3">
+  <% unless @vehicles.first.nil? %>
     <% @vehicles.reverse.each do |vehicle| %>
       <%= render '/components/card', vehicle: vehicle %>
     <% end %>
+  <% else %>
+    <p>Sorry, no cars available</p>
+  <% end %>
   </div>
 </div>
