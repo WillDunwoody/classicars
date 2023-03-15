@@ -1,4 +1,8 @@
 class BookingsController < ApplicationController
+  def index
+    @bookings = policy_scope(Booking.where(vehicle_id: params[:vehicle_id]))
+  end
+
   def create
     @booking = Booking.new(booking_params)
     @vehicle = Vehicle.find(params[:vehicle_id])
@@ -20,6 +24,9 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to root_path, status: :see_other
     authorize @booking
   end
 

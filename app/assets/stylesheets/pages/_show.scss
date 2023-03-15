@@ -41,7 +41,8 @@ p {
   .description {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    // width: 60%;
+    flex-grow: 1;
 
     .profile {
       display: flex;
@@ -66,6 +67,7 @@ p {
 
     .test {
       display: flex;
+      flex-grow: 1;
 
       .location {
         box-sizing: border-box;
@@ -75,7 +77,8 @@ p {
       }
 
       .vehicle-description {
-        width: 553px;
+        flex-grow: 1;
+
         padding-right: 64px;
       }
     }
@@ -143,6 +146,7 @@ p {
 
 .review-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 1010px;
   margin: 64px auto;
@@ -186,4 +190,9 @@ p {
       }
     }
   }
+}
+
+.map-container {
+  display: flex;
+  justify-content: center;
 }

@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   post '/bookings/:booking_id/reviews', to: 'reviews#create', as: :booking_reviews
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :vehicles, only: %i[index show edit update destroy] do
-    resources :bookings, only: [:create]
+  resources :vehicles, only: %i[new create index show edit update destroy] do
+    resources :bookings, only: %i[create]
   end
 
   resources :users, only: [:show]
-  resources :vehicles, only: %i[new create]
+  resources :bookings, only: %i[destroy]
 end
