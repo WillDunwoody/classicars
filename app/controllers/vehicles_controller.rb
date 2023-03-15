@@ -18,7 +18,6 @@ class VehiclesController < ApplicationController
 
   def create
     @vehicle = Vehicle.new(vehicle_params)
-
     @vehicle.user = current_user
     @vehicle.save
     authorize @vehicle
@@ -38,7 +37,9 @@ class VehiclesController < ApplicationController
   def show
     @booking = Booking.new
     @booking_review = Booking.where(user: current_user, vehicle: @vehicle).first
+    @bookings = @vehicle.bookings
     @review = Review.new
+    @markers = [{ lat: @vehicle.latitude, lng: @vehicle.longitude }]
 
     authorize @vehicle
   end
@@ -57,6 +58,6 @@ class VehiclesController < ApplicationController
   end
 
   def vehicle_params
-    params.require(:vehicle).permit(:model, :make, :year, :passengers, :description, :city, :country, :price, photos: [])
+    params.require(:vehicle).permit(:model, :make, :year, :passengers, :description, :city, :country, :price, :address, photos: [])
   end
 end

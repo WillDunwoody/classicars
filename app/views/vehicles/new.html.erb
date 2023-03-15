@@ -3,7 +3,7 @@
 <div class="main-newcar-container">
   <h2 class="mb-5">New Vehicle</h2>
   <div class="newcar-container">
-    <%= simple_form_for [current_user, @vehicle] do |f| %>
+    <%= simple_form_for [@vehicle] do |f| %>
       <div class="newcar-input">
         <%= f.input :make %>
         <%= f.input :model %>
@@ -13,6 +13,7 @@
         <%= f.input :price, as: :float %>
         <%= f.input :city %>
         <%= f.input :country %>
+        <%= f.input :address, input_html: {data: {address_autocomplete_target: "address"}}, wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.submit "Add car", class:"submit-btn" %>
       </div>

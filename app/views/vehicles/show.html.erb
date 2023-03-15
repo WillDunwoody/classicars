@@ -51,64 +51,74 @@
           </div>
         </div>
       </div>
+
+
+
+  <div data-controller="flatpickr"
+       data-flatpickr-unavailable-value="<%= @vehicle.unavailable_dates.to_json %>"
+       data-flatpickr-price-value="<%= @vehicle.price %>">
+
       <div class="book-form">
         <%= simple_form_for [@vehicle, @booking] do |f| %>
           <div class="from-date">
             <%= label_tag 'from', 'FROM' %>
-            <%= f.date_field :start_date, html5: true, as: :date, value: params[:from] %>
+            <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startdate", action: "change->flatpickr#startDateInput" }}, label_html: {style: "display: none;"}, placeholder: "dd/mm/yy" %>
           </div>
           <div class="to-date">
             <%= label_tag 'to', 'TO' %>
-            <%= f.date_field :end_date, html5: true, value: params[:to] %>
+            <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "enddate", action: "change->flatpickr#calculatePrice" }}, label_html: { style: "display: none;"}, placeholder: "dd/mm/yy" %>
           </div>
           <div class="book-btn">
             <%= f.submit "Book" %>
           </div>
           <div class="total">
             <span>TOTAL</span>
-            <span class="total-price">
+            <span class="total-price" data-flatpickr-target="price">
             <% if (params[:from].nil? || params[:from].empty?  || params[:to].nil? || params[:to].empty?) %>
               Choose dates</span>
             <% else %>
-              <%
-                from = Date.parse(params[:from])
-                to = Date.parse(params[:to])
-                days = (to - from).to_i
-                price = days * @vehicle.price
-              %>
-              <%= price %> €</span>
+
             <% end %>
           </div>
         <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
 
 <div class="review-container">
   <% @vehicle.reviews.each do |vehicle|  %>
-  <% @user = User.find(vehicle.booking.user_id) %>
-  <div class="review">
-    <div class="review-profile">
-      <% if @user.photo.key.nil? %>
-        <div class="review-avatar" style="background-image: url('https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnVubnklMjBmYWNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60')"></div>
-      <% else %>
-        <div class="review-avatar" style="background-image: url(<%= cl_image_path @user.photo.key %>)"></div>
-      <% end %>
-        <% if @user.username.nil? %>
-          <p class="review-name">Greggo</p>
+    <% @user = User.find(vehicle.booking.user_id) %>
+    <div class="review">
+      <div class="review-profile">
+        <% if @user.photo.key.nil? %>
+          <div class="review-avatar" style="background-image: url('https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnVubnklMjBmYWNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60')"></div>
         <% else %>
-          <p class="review-name"><%= @user.username %></p>
+          <div class="review-avatar" style="background-image: url(<%= cl_image_path @user.photo.key %>)"></div>
         <% end %>
+          <% if @user.username.nil? %>
+            <p class="review-name">Greggo</p>
+          <% else %>
+            <p class="review-name"><%= @user.username %></p>
+          <% end %>
+      </div>
+      <div class="review-content">
+        <div><%= vehicle.rating %> / 5</div>
+        <div class="review-comment"><%= vehicle.comment %></div>
+      </div>
     </div>
-    <div class="review-content">
-      <div><%= vehicle.rating %> / 5</div>
-      <div class="review-comment"><%= vehicle.comment %></div>
-    </div>
-  </div>
   <% end %>
+</div>
 
-  <% if @booking_review %>
+<div class="map-container mb-5">
+  <div style="width: 1010px; height: 600px; border-radius: 30px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>"></div>
+</div>
+
+ <!-- <% if @booking_review %>
     <div class="main-review-container">
       <h2 class="mb-5">Leave a Review</h2>
       <div class="new-review-container">
@@ -122,5 +132,8 @@
       </div>
     </div>
   <% end %>
-
+  <% @bookings.each do |booking| %>
+    <%= link_to "delete", booking_path(booking), data: {turbo_method: :delete} %>
+  <% end %>
+  </div> -->
 </div>
