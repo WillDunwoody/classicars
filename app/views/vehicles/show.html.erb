@@ -77,7 +77,12 @@
             <% if (params[:from].nil? || params[:from].empty?  || params[:to].nil? || params[:to].empty?) %>
               Choose dates</span>
             <% else %>
-
+               <%
+                from = Date.parse(params[:from])
+                to = Date.parse(params[:to])
+                days = (to - from).to_i
+                price = days * @vehicle.price
+              %>
             <% end %>
           </div>
         <% end %>
