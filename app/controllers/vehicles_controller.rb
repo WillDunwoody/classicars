@@ -1,13 +1,10 @@
 class VehiclesController < ApplicationController
   # before_action :authenticate_user!, only:[:new, :create, :edit, :update]
-  before_action :find_vehicle, only: [:edit, :update, :show, :destroy]
+  before_action :find_vehicle, only: %i[edit update show destroy]
 
   def index
-    if params[:location].present?
-      @vehicles = policy_scope(Vehicle).where(city: params[:location])
-    else
-      @vehicles = policy_scope(Vehicle)
-    end
+    @vehicles = policy_scope(Vehicle).check_params(params[:location], params[:from], params[:to])
+
     @user = current_user
   end
 

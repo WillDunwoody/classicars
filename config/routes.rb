@@ -11,5 +11,9 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show]
-  resources :bookings, only: %i[destroy]
+  resources :bookings, only: %i[destroy] do
+    member do
+      get 'confirmation'
+    end
+  end
 end

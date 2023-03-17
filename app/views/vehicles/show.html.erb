@@ -62,11 +62,17 @@
         <%= simple_form_for [@vehicle, @booking] do |f| %>
           <div class="from-date">
             <%= label_tag 'from', 'FROM' %>
-            <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startdate", action: "change->flatpickr#startDateInput" }}, label_html: {style: "display: none;"}, placeholder: "dd/mm/yy" %>
+            <%= f.input :start_date, as: :string,
+                        input_html: { data: { flatpickr_target: "startdate", action: "change->flatpickr#startDateInput" }},
+                        label_html: {style: "display: none;"},
+                        placeholder: "dd/mm/yy" %>
           </div>
           <div class="to-date">
             <%= label_tag 'to', 'TO' %>
-            <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "enddate", action: "change->flatpickr#calculatePrice" }}, label_html: { style: "display: none;"}, placeholder: "dd/mm/yy" %>
+            <%= f.input :end_date, as: :string,
+                        input_html: { data: { flatpickr_target: "enddate", action: "change->flatpickr#calculatePrice" }},
+                        label_html: { style: "display: none;"},
+                        placeholder: "dd/mm/yy" %>
           </div>
           <div class="book-btn">
             <%= f.submit "Book" %>
