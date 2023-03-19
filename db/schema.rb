@@ -82,8 +82,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_14_172850) do
   end
 
   create_table "vehicles", force: :cascade do |t|
-    t.string "model"
-    t.string "make"
+    t.string "v_model"
+    t.string "v_make"
     t.integer "year"
     t.string "vehicle_type"
     t.integer "passengers"

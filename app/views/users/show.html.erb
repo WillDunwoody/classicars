@@ -19,13 +19,13 @@
 
             <div class="card-product">
                <% if vehicle.photos.first.nil? %>
-                  <img src="https://source.unsplash.com/1600x900/?<%= vehicle.make %>%20<%= vehicle.model %>car" class="card-img-top" alt="..." />
+                  <img src="https://source.unsplash.com/1600x900/?<%= vehicle.v_make %>%20<%= vehicle.v_model %>car" class="card-img-top" alt="..." />
                 <% else %>
                   <img src="<%= cl_image_path vehicle.photos.first.key, crop: :fill %>", class="card-img-top">
                 <% end %>
               <div class="card-product-infos">
                 <div>
-                  <h2 style="color:#333;padding-bottom:5px"><%= vehicle.make %> <%= vehicle.model %></h2>
+                  <h2 style="color:#333;padding-bottom:5px"><%= vehicle.v_make %> <%= vehicle.v_model %></h2>
                   <p style="color:#333;padding-top:5px;opacity:0.7;" class="douze"><strong>From</strong> <%= booking.start_date.strftime("%d/%m/%Y") %> <strong>to</strong> <%= booking.end_date.strftime("%d/%m/%Y") %></p>
                 </div>
                 <p class="price-upcoming"><%= price %> €</p>
@@ -55,13 +55,13 @@
 
               <div class="card-product">
                 <% if vehicle.photos.first.nil? %>
-                  <img src="https://source.unsplash.com/1600x900/?<%= vehicle.make %>%20<%= vehicle.model %>car" class="card-img-top" alt="..." />
+                  <img src="https://source.unsplash.com/1600x900/?<%= vehicle.v_make %>%20<%= vehicle.v_model %>car" class="card-img-top" alt="..." />
                 <% else %>
                   <img src="<%= cl_image_path vehicle.photos.first.key, crop: :fill %>", class="card-img-top">
                 <% end %>
                 <div class="card-product-infos">
                   <div class="booking-infos">
-                    <h2><%= vehicle.make %> <%= vehicle.model %></h2>
+                    <h2><%= vehicle.v_make %> <%= vehicle.v_model %></h2>
                     <p class="mid-m douze"><strong>From</strong> <%= booking.start_date.strftime("%d/%m/%Y") %> <strong>to</strong> <%= booking.end_date.strftime("%d/%m/%Y") %></p>
                     <p class="douze"><%= price %> €</p>
                   </div>
