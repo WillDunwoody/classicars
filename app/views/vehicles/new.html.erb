@@ -5,8 +5,8 @@
   <div class="newcar-container">
     <%= simple_form_for [@vehicle] do |f| %>
       <div class="newcar-input">
-        <%= f.input :make %>
-        <%= f.input :model %>
+        <%= f.input :v_make %>
+        <%= f.input :v_model %>
         <%= f.input :year, as: :date, html5: true %>
         <%= f.input :passengers, as: :integer %>
         <%= f.input :description, as: :text %>

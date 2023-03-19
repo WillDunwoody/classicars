@@ -7,10 +7,10 @@ class Vehicle < ApplicationRecord
   has_many_attached :photos
   has_many :bookings, dependent: :destroy
   has_many :reviews, through: :bookings
-  has_many :users, through: :bookings
+  # has_many :users, through: :bookings
 
   pg_search_scope :search_by_make_model_city,
-                  against: %i[make model city],
+                  against: %i[v_make v_model city],
                   using: {
                     tsearch: { prefix: true }
                   }

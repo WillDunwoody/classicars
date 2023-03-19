@@ -55,6 +55,6 @@ class VehiclesController < ApplicationController
   end
 
   def vehicle_params
-    params.require(:vehicle).permit(:model, :make, :year, :passengers, :description, :city, :country, :price, :address, photos: [])
+    params.require(:vehicle).permit(:v_model, :v_make, :year, :passengers, :description, :city, :country, :price, :address, photos: [])
   end
 end
