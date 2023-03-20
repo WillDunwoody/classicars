@@ -1,9 +1,10 @@
 .container {
-  width: 1100px;
+  max-width: 1300px;
 }
+
 .card-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   flex-wrap: wrap;
   margin-bottom: 16px;
@@ -12,7 +13,7 @@
 .card {
   width: 243px;
   border-style: none;
-  margin-bottom: 48px;
+  margin: 24px 16px;
   transition: 0.4s;
 
   &:hover {

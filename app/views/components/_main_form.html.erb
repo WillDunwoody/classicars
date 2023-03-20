@@ -1,13 +1,17 @@
 <%= form_with url: vehicles_path, method: :get, html: { autocomplete: "off" }, class: "main-form" do %>
   <div class="first-line">
-    <%= label_tag 'location', 'Rent a classic car in' %>
-    <%= text_field_tag :location, params[:location], placeholder: "wherever you want", class: "location-input" %>
+    <%= label_tag 'location', 'Rent a classic car in', style: "color: #{color};" %>
+    <%= text_field_tag :location, params[:location], placeholder: "wherever you want", class: "location-input", style: "border: 1px solid #{color}; color: #{color};", input_html: {syle: "color: white;"} %>
   </div>
-  <div class="second-line">
-    <%= label_tag 'from', 'from' %>
-    <%= date_field_tag :from, params[:from], class: "date-input" %>
-    <%= label_tag 'to', 'to' %>
-    <%= date_field_tag :to, params[:to], class: "date-input" %>
+  <div class="second-line" style="color: <%= color %>;">
+    <div class="from-date">
+      <%= label_tag 'from', 'from' %>
+      <%= date_field_tag :from, params[:from], class: "date-input", style: "border: 1px solid #{color}; color: #{color};" %>
+    </div>
+    <div class="to-date">
+      <%= label_tag 'to', 'to' %>
+      <%= date_field_tag :to, params[:to], class: "date-input", style: "border: 1px solid #{color}; color: #{color};" %>
+    </div>
     <%= submit_tag "Search", class: "sub-btn" %>
   </div>
 <% end %>

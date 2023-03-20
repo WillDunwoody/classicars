@@ -1,44 +1,91 @@
 .nav-bar-white {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   z-index: 1;
   width: 100%;
-  padding: 32px;
+  height: 10vh;
+  padding: 0 32px;
+
+  a {
+    text-decoration: none;
+  }
 
   a.dropdown-item {
     text-decoration: none;
     color: rgb(8, 8, 8);
   }
 
-  ul {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    a {
-      text-decoration: none;
-      color: #fff;
-      margin-left: 10px;
-    }
-
-    li:hover {
-      cursor: pointer;
-    }
-
-    .logo {
-      flex-grow: 1;
-      font-weight: 700;
-    }
-
-    .cta-rent {
-      margin-left: 32px;
-      font-weight: 700;
-    }
+  .logo {
+    flex-grow: 1;
+    font-weight: 700;
   }
+
   div.dropdown-menu-end {
     border-radius: 10px;
     box-shadow: 3px 3px 10px ;
     margin: 16px 0px !important;
   }
+}
 
+.white {
+  color: white;
+}
+
+.white:hover {
+  color: white;
+}
+
+.black {
+  color:rgb(8, 8, 8);
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 18%;
+  justify-content: space-between;
+}
+
+.burger {
+  display: none;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  width: 5%;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .nav-items {
+    padding: 12px;
+    position: absolute;
+    right: 32px;
+    top: 7vh;
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    align-items: start;
+    box-shadow: 3px 3px 10px ;
+    margin: 16px 0px !important;
+    border-radius: 10px;
+    list-style: none;
+    width: 50%;
+    a {
+      color:rgb(8, 8, 8);
+    }
+  }
+
+  .user-menu {
+    width: 25%;
+  }
 }

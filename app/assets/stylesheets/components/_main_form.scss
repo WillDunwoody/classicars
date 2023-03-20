@@ -4,11 +4,9 @@
   text-align: center;
   font-size: 48px;
   font-weight: 600;
-  color: white;
 
   input {
     font-size: 16px;
-    border: 1px solid #fff;
     border-radius: 10px;
 
     &:focus {
@@ -20,12 +18,11 @@
   .first-line {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
-    margin-bottom: 32px;
 
     label {
       padding-bottom: 10px;
-      line-height: 0;
     }
   }
 
@@ -33,17 +30,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 
     label {
-      margin: 0 6px;
       padding-bottom: 8px;
       line-height: 0;
     }
   }
 
+  .from-date {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .to-date {
+    display: flex;
+    align-items: center;
+  }
+
   ::placeholder {
     font-weight: 300;
-    color: #fff;
   }
 
   .location-input {
@@ -51,8 +59,7 @@
     height: 42px;
     margin-left: 32px;
     padding-left: 32px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0);
   }
 
   .date-input {
@@ -60,8 +67,7 @@
     height: 42px;
     margin: 0 32px;
     padding: 0 32px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0);
   }
 
   ::-webkit-calendar-picker-indicator {
@@ -70,10 +76,6 @@
     &:hover {
       cursor: pointer;
     }
-  }
-
-  ::placeholder {
-    color: #fff;
   }
 
   .sub-btn {
@@ -88,6 +90,38 @@
       background-color: #333;
       color: #fff;
       border: none;
+    }
+  }
+}
+
+@media (max-width: 786px) {
+  .main-form {
+    .first-line {
+      flex-wrap: wrap;
+      label {
+        line-height: 1;
+      }
+    }
+
+    .date-input {
+      margin: 0;
+    }
+
+    .location-input {
+      margin-left: 0px;
+    }
+
+    .from-date {
+      margin-top: 20px;
+      width: 353px;
+      justify-content: space-between;
+    }
+
+    .to-date {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      width: 353px;
+      justify-content: space-between;
     }
   }
 }

@@ -19,8 +19,13 @@
   <body>
     <div class="body-container">
     <div class="wrapper">
+      <% if params[:controller] == "pages" %>
+        <%= render "/components/navbar", color: "white" %>
+      <% else %>
+        <%= render "/components/navbar", color: "black" %>
+      <% end %>
       <%= yield %>
-      <%=render '/components/footer'%>
+       <%# <%=render '/components/footer'%>
     </div>
     </div>
   </body>
